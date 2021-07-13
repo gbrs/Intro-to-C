@@ -1,0 +1,17 @@
+int main()
+{
+	using namespace std;
+
+	cout << "Hello,World!" << endl;
+	system("pause");
+
+	return 0;
+}
+
+1.2.1
+int main() {
+    using namespace std;
+	cout << "Hello, World!";
+    return 0;
+}
+
