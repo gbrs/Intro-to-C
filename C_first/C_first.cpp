@@ -2,13 +2,13 @@
 //
 
 #include <iostream>
-#include <locale>),
-using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "RUSSIAN");
-	cout << "Привет, Мир!" << endl;
+	using namespace std;
+	int n, k;
+	cin >> n >> k;
+	cout << k % n << endl;
 	return 0;
 }
 
@@ -25,6 +25,37 @@ int main()
 //   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
 //   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
 
+
+
+/*
+1.3.2
+
+*/
+
+/*
+1.3.1
+#include <iostream>
+
+int main()
+{
+	using namespace std;
+	int n, k;
+	cin >> n;
+	cin >> k;
+	cout << k / n;
+	return 0;
+}
+*/
+
+/*
+1.2.2
+int main() {
+	using namespace std;
+	cout << "Hello, Stepik!";
+	return 0;
+}*/
+
+
 /*
 1.2.1
 int main() {
@@ -34,10 +65,3 @@ int main() {
 }
 */
 
-/*
-1.2.2
-int main() {
-    using namespace std;
-	cout << "Hello, Stepik!";
-    return 0;
-}*/
