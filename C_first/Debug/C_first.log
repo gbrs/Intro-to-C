@@ -1,2 +1,2 @@
 ﻿  C_first.cpp
-  C_first.vcxproj -> E:\Программирование\Intro_to_C\Debug\C_first.exe
+LINK : fatal error LNK1168: не удается открыть C:\Users\Боря\PycharmProjects\Intro_to_C\Debug\C_first.exe для записи
