@@ -2,20 +2,16 @@
 //
 
 #include <iostream>
+#include <iomanip>
 
 int main()
 {
 	using namespace std;
-	int n, m, k;
-	cin >> n >> m >> k;
-	if (k <= n * m && (k % n == 0 || k % m == 0))
-	{
-		cout << "YES";
-	}
-	else
-	{
-		cout << "NO";
-	}
+	int n = 22, m = 3;
+	float s;
+	cout << setprecision(3) << fixed;
+	s = n / (float) m;
+	cout << s;
 	return 0;
 }
 
