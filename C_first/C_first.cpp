@@ -7,11 +7,9 @@
 int main()
 {
 	using namespace std;
-	int n = 22, m = 3;
-	float s;
-	cout << setprecision(3) << fixed;
-	s = n / (float) m;
-	cout << s;
+	string a = "dgfg";
+	a += ";lk";
+	cout << a << endl;
 	return 0;
 }
 
