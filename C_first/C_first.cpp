@@ -2,22 +2,50 @@
 //
 
 #include <iostream>
-#include <iomanip>
 
 int main()
 {
 	using namespace std;
-	string a = "dgfg";
-	a += ";lk";
-	cout << a << endl;
+	double x;
+	cin >> x;
+	cout << x - (float) (int) x;
 	return 0;
 }
 
 /*_____________________________________________________________*/
 
 
+/*
+1.6.1
+#include <iostream>
 
+int main()
+{
+	using namespace std;
+	double x;
+	cin >> x;
+	cout << x - (float) (int) x;
+	return 0;
+}
+*/
 
+/*
+1.5.1
+#include <iostream>
+
+int main()
+{
+	using namespace std;
+	int i = 2, n;
+	cin >> n;
+	cout << 1;
+	while (i * i <= n) {
+		cout << " " << i * i;
+		i++;
+	}
+	return 0;
+}
+*/
 
 /*
 1.4.11
