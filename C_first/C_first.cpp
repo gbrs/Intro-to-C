@@ -2,18 +2,47 @@
 //
 
 #include <iostream>
+double sin(double x);
 
 int main()
 {
 	using namespace std;
-	double x;
-	cin >> x;
-	cout << x - (float) (int) x;
+
+	double x = 3.1415 / 6;
+	cout << sin(x);
+	system("pause");
+
 	return 0;
 }
 
 /*_____________________________________________________________*/
 
+
+
+/*
+1.7.1
+#include <iostream>
+#include <vector>
+
+int main()
+{
+	using namespace std;
+
+	int i, n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+
+	for (i = 0; i < n; i += 2) {
+		cout << a[i] << " ";
+	}
+
+	return 0;
+}
+*/
 
 /*
 1.6.1
