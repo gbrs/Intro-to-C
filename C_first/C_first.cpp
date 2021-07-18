@@ -2,33 +2,89 @@
 //
 
 #include <iostream>
-#include  <stdlib.h>
-#include  <time.h>
-
-
+#include <locale>
 int main()
 {
-	std::cout << "bool:\t\t" << sizeof(bool) << " bytes" << std::endl;
-	std::cout << "char:\t\t" << sizeof(char) << " bytes" << std::endl;
-	std::cout << "wchar_t:\t" << sizeof(wchar_t) << " bytes" << std::endl;
-	std::cout << "char16_t:\t" << sizeof(char16_t) << " bytes" << std::endl;
-	std::cout << "char32_t:\t" << sizeof(char32_t) << " bytes" << std::endl;
-	std::cout << "short:\t\t" << sizeof(short) << " bytes" << std::endl;
-	std::cout << "int:\t\t" << sizeof(int) << " bytes" << std::endl;
-	std::cout << "long:\t\t" << sizeof(long) << " bytes" << std::endl;
-	std::cout << "long long:\t" << sizeof(long long) << " bytes" << std::endl;
-	std::cout << "float:\t\t" << sizeof(float) << " bytes" << std::endl;
-	std::cout << "double:\t\t" << sizeof(double) << " bytes" << std::endl;
-	std::cout << "long double:\t" << sizeof(long double) << " bytes" << std::endl;
-	/*float a, b;
-	std::cin >> a >> b;
-	std::cout << a << b;*/
+	std::cout << (isdigit(std::cin.get()) ? "yes" : "no");
 	return 0;
 }
 
 /*_____________________________________________________________*/
 
 
+
+/*
+1.10.1
+#include <iostream>
+
+
+int main() {
+	using namespace std;
+	char c;
+	cin >> c;
+	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
+	return 0;
+}
+*/
+
+/*
+1.9.1
+#include <iostream>
+
+
+int min(int a, int b);
+int min4(int a, int b, int c, int d);
+
+int main() {
+	using namespace std;
+	int a, b, c, d;
+	cin >> a >> b >> c >> d;
+	cout << min4(a, b, c, d);
+	return 0;
+}
+
+int min(int a, int b)
+{
+	if (a <= b)
+	{
+		return a;
+	}
+	return b;
+}
+
+int min4(int a, int b, int c, int d)
+{
+	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+1.8.1
+#include <iostream>
+#include <stdio.h>
+
+
+int main() {
+	using namespace std;
+	int arr[100][100], n, m, max=-2 147 483 648, max_row, max_column;
+	cin >> n >> m;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> arr[i][j];
+			if (arr[i][j] > max)
+			{
+				max = arr[i][j];
+				max_row = i;
+				max_column = j;
+			}
+		}
+	}
+	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
 
 /*
 1.7.1
