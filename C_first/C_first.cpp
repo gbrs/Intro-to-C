@@ -2,10 +2,21 @@
 //
 
 #include <iostream>
-#include <locale>
+#include <string>
+using namespace std;
+
+void f(int *a, int &b)
+{
+	++*a;
+	++b;
+}
+
 int main()
 {
-	std::cout << (isdigit(std::cin.get()) ? "yes" : "no");
+	int a = 10, b = 10;
+	int& z = b;
+	f(&a, z);
+	cout << a << endl << b << endl;
 	return 0;
 }
 
