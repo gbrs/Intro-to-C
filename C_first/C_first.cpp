@@ -2,27 +2,67 @@
 //
 
 #include <iostream>
-#include <string>
-using namespace std;
+#include <vector>
+#include <set>
 
-void f(int *a, int &b)
-{
-	++*a;
-	++b;
-}
 
 int main()
 {
-	int a = 10, b = 10;
-	int& z = b;
-	f(&a, z);
-	cout << a << endl << b << endl;
+	using namespace std;
+
+	int i, n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+
+	set <int> s;
+	for (auto current : a)
+	{
+		s.insert(current);
+	}
+	
+	cout << s.size();
+
 	return 0;
 }
 
 /*_____________________________________________________________*/
 
 
+
+/*
+1.11.1
+#include <iostream>
+#include <vector>
+#include <set>
+
+
+int main()
+{
+	using namespace std;
+
+	int i, n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+
+	set <int> s;
+	for (auto current : a)
+	{
+		s.insert(current);
+	}
+
+	cout << s.size();
+
+	return 0;
+}
+*/
 
 /*
 1.10.1
