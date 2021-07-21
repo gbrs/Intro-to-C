@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include <set>
+#include <algorithm>
 
 
 int main()
@@ -18,13 +18,11 @@ int main()
 		cin >> a[i];
 	}
 
-	set <int> s;
-	for (auto current : a)
-	{
-		s.insert(current);
-	}
+	sort(a.begin(), a.end());
 	
-	cout << s.size();
+	for (i = 0; i < n; i++) {
+		cout << a[i] << " ";
+	}
 
 	return 0;
 }
@@ -32,6 +30,35 @@ int main()
 /*_____________________________________________________________*/
 
 
+
+/*
+1.12.1
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+
+int main()
+{
+	using namespace std;
+
+	int i, n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++) {
+		cin >> a[i];
+	}
+
+	sort(a.begin(), a.end());
+
+	for (i = 0; i < n; i++) {
+		cout << a[i] << " ";
+	}
+
+	return 0;
+}
+*/
 
 /*
 1.11.1
