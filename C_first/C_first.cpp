@@ -2,28 +2,21 @@
 //
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
+using namespace std;
 
 
 int main()
 {
-	using namespace std;
-
-	int i, n;
+	int d = 2, n;
 	cin >> n;
-	vector <int> a(n);
-
-	for (i = 0; i < n; i++) {
-		cin >> a[i];
+	while (d <= n) {
+		if (n % d == 0)
+		{
+			cout << d;
+			break;
+		}
+		d++;
 	}
-
-	sort(a.begin(), a.end());
-	
-	for (i = 0; i < n; i++) {
-		cout << a[i] << " ";
-	}
-
 	return 0;
 }
 
@@ -199,6 +192,28 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+1.5.2
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int d = 2, n;
+	cin >> n;
+	while (d <= n) {
+		if (n % d == 0)
+		{
+			cout << d;
+			break;
+		}
+		d++;
+	}
 	return 0;
 }
 */
