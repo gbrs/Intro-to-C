@@ -7,16 +7,9 @@ using namespace std;
 
 int main()
 {
-	int d = 2, n;
+	double n;
 	cin >> n;
-	while (d <= n) {
-		if (n % d == 0)
-		{
-			cout << d;
-			break;
-		}
-		d++;
-	}
+	cout << ((int) (n * 10)) % 10;
 	return 0;
 }
 
@@ -178,6 +171,21 @@ int main()
 		cout << a[i] << " ";
 	}
 
+	return 0;
+}
+*/
+
+/*
+1.6.2
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	double n;
+	cin >> n;
+	cout << ((int) (n * 10)) % 10;
 	return 0;
 }
 */
