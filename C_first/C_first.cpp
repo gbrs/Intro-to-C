@@ -151,6 +151,37 @@ int main() {
 */
 
 /*
+1.7.2
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	int i, n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (auto number : a)
+	{
+		if (number % 2 == 0)
+		{
+			cout << number << " ";
+		}
+	}
+
+	return 0;
+}
+*/
+
+/*
 1.7.1
 #include <iostream>
 #include <vector>
