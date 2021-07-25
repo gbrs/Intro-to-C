@@ -4,14 +4,38 @@
 #include <iostream>
 using namespace std;
 
-
-int main()
-{
-	double n;
+int main() {
+	char arr[15][15];
+	int n;
 	cin >> n;
-	cout << ((int) (n * 10)) % 10;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			
+			if (i == n / 2 or j == n / 2 or i == j or i == n - j - 1)
+			{
+				arr[i][j] = '*';
+			}
+			else
+			{
+				arr[i][j] = '.';
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
 	return 0;
 }
+
+
+
 
 /*_____________________________________________________________*/
 
@@ -119,6 +143,42 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+1.8.2
+#include <iostream>
+using namespace std;
+
+int main() {
+	char arr[15][15];
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+
+			if (i == n / 2 or j == n / 2 or i == j or i == n - j - 1)
+			{
+				arr[i][j] = '*';
+			}
+			else
+			{
+				arr[i][j] = '.';
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+	return 0;
 }
 */
 
