@@ -1,38 +1,28 @@
 ﻿// C_first.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
+
+//1.9.2
+
 #include <iostream>
+#include <math.h>
 using namespace std;
 
+
+double distance(double x1, double y1, double x2, double y2);
+
 int main() {
-	char arr[15][15];
-	int n;
-	cin >> n;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			
-			if (i == n / 2 or j == n / 2 or i == j or i == n - j - 1)
-			{
-				arr[i][j] = '*';
-			}
-			else
-			{
-				arr[i][j] = '.';
-			}
-		}
-	}
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cout << arr[i][j] << " ";
-		}
-		cout << endl;
-	}
+	double x1, y1, x2, y2;
+	cin >> x1 >> y1 >> x2 >> y2;
+	cout << distance(x1, y1, x2, y2);
 	return 0;
 }
+
+double distance(double x1, double y1, double x2, double y2)
+{
+	return pow((pow((fabs(x1 - x2)), 2) + pow((fabs(y1 - y2)), 2)), 0.5);
+}
+
 
 
 
@@ -112,6 +102,29 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.2
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+double distance(double x1, double y1, double x2, double y2);
+
+int main() {
+	double x1, y1, x2, y2;
+	cin >> x1 >> y1 >> x2 >> y2;
+	cout << distance(x1, y1, x2, y2);
+	return 0;
+}
+
+double distance(double x1, double y1, double x2, double y2)
+{
+	return pow((pow((fabs(x1 - x2)), 2) + pow((fabs(y1 - y2)), 2)), 0.5);
 }
 */
 
