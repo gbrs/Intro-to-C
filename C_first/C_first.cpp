@@ -2,26 +2,28 @@
 //
 
 
-//1.9.2
+//1.10.2
+
 
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 
-double distance(double x1, double y1, double x2, double y2);
-
 int main() {
-	double x1, y1, x2, y2;
-	cin >> x1 >> y1 >> x2 >> y2;
-	cout << distance(x1, y1, x2, y2);
+	char c;
+	cin >> c;
+	if (c < 123 and c > 96)
+	{
+		cout << (char) (c - 32) << endl;
+	}
+	else
+	{
+		cout << (char) c << endl;
+	}
+	
 	return 0;
 }
 
-double distance(double x1, double y1, double x2, double y2)
-{
-	return pow((pow((fabs(x1 - x2)), 2) + pow((fabs(y1 - y2)), 2)), 0.5);
-}
 
 
 
@@ -86,6 +88,30 @@ int main()
 	}
 
 	cout << s.size();
+
+	return 0;
+}
+*/
+
+/*
+//1.10.2
+
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+	char c;
+	cin >> c;
+	if (c < 123 and c > 96)
+	{
+		cout << (char) (c - 32) << endl;
+	}
+	else
+	{
+		cout << (char) c << endl;
+	}
 
 	return 0;
 }
