@@ -2,24 +2,34 @@
 //
 
 
-//1.10.2
-
+//1.11.2
 
 #include <iostream>
+#include <set>
 using namespace std;
 
 
-int main() {
-	char c;
-	cin >> c;
-	if (c < 123 and c > 96)
+int main()
+{
+	int n, current, sz = 0;
+	cin >> n;
+	set <int> s;
+
+	for (int i = 0; i < n; i++)
 	{
-		cout << (char) (c - 32) << endl;
+		cin >> current;
+		s.insert(current);
+		if (sz == s.size())
+		{
+			cout << "YES" << endl;
+		}
+		else
+		{
+			cout << "NO" << endl;
+			sz += 1;
+		}
 	}
-	else
-	{
-		cout << (char) c << endl;
-	}
+	
 	
 	return 0;
 }
@@ -57,6 +67,40 @@ int main()
 	for (i = 0; i < n; i++) {
 		cout << a[i] << " ";
 	}
+
+	return 0;
+}
+*/
+
+/*
+//1.11.2
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+
+int main()
+{
+	int n, current, sz = 0;
+	cin >> n;
+	set <int> s;
+
+	for (int i = 0; i < n; i++)
+	{
+		cin >> current;
+		s.insert(current);
+		if (sz == s.size())
+		{
+			cout << "YES" << endl;
+		}
+		else
+		{
+			cout << "NO" << endl;
+			sz += 1;
+		}
+	}
+
 
 	return 0;
 }
