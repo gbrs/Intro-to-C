@@ -2,35 +2,48 @@
 //
 
 
-//1.11.2
+//1.12.2
+
 
 #include <iostream>
-#include <set>
+#include <algorithm>
 using namespace std;
 
 
 int main()
 {
-	int n, current, sz = 0;
+	int mans_size, n, outer_shoe_size, cnt = 0, shoes[1000] = {0};
+	cin >> mans_size;
 	cin >> n;
-	set <int> s;
-
 	for (int i = 0; i < n; i++)
 	{
-		cin >> current;
-		s.insert(current);
-		if (sz == s.size())
+		cin >> shoes[i];
+	}
+	sort(shoes, shoes + 1000);
+
+
+	for (int i = 0; i < 1000; i++)
+	{
+		if (cnt == 0)
 		{
-			cout << "YES" << endl;
+			if (mans_size <= shoes[i])
+			{
+				cnt += 1;
+				outer_shoe_size = shoes[i];
+			}
 		}
 		else
 		{
-			cout << "NO" << endl;
-			sz += 1;
+			if (outer_shoe_size + 3 <= shoes[i])
+			{
+				cnt += 1;
+				outer_shoe_size = shoes[i];
+			}
 		}
 	}
-	
-	
+
+	cout << cnt;
+
 	return 0;
 }
 
@@ -41,6 +54,55 @@ int main()
 
 /*_____________________________________________________________*/
 
+
+
+
+/*
+//1.12.2
+
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+	int mans_size, n, outer_shoe_size, cnt = 0, shoes[1000] = {0};
+	cin >> mans_size;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> shoes[i];
+	}
+	sort(shoes, shoes + 1000);
+
+
+	for (int i = 0; i < 1000; i++)
+	{
+		if (cnt == 0)
+		{
+			if (mans_size <= shoes[i])
+			{
+				cnt += 1;
+				outer_shoe_size = shoes[i];
+			}
+		}
+		else
+		{
+			if (outer_shoe_size + 3 <= shoes[i])
+			{
+				cnt += 1;
+				outer_shoe_size = shoes[i];
+			}
+		}
+	}
+
+	cout << cnt;
+
+	return 0;
+}
+*/
 
 
 /*
