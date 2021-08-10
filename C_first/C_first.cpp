@@ -2,51 +2,24 @@
 //
 
 
-//1.12.2
-
-
+// 1.5.3
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using namespace std;
 
 
 int main()
 {
-	int mans_size, n, outer_shoe_size, cnt = 0, shoes[1000] = {0};
-	cin >> mans_size;
+	int n, now = 1, i = 0;
 	cin >> n;
-	for (int i = 0; i < n; i++)
+
+	while (now <= n)
 	{
-		cin >> shoes[i];
+		cout << now << " ";
+		now *= 2;
 	}
-	sort(shoes, shoes + 1000);
-
-
-	for (int i = 0; i < 1000; i++)
-	{
-		if (cnt == 0)
-		{
-			if (mans_size <= shoes[i])
-			{
-				cnt += 1;
-				outer_shoe_size = shoes[i];
-			}
-		}
-		else
-		{
-			if (outer_shoe_size + 3 <= shoes[i])
-			{
-				cnt += 1;
-				outer_shoe_size = shoes[i];
-			}
-		}
-	}
-
-	cout << cnt;
-
 	return 0;
 }
-
 
 
 
@@ -436,6 +409,27 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.3
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+	int n, now = 1, i = 0;
+	cin >> n;
+
+	while (now <= n)
+	{
+		cout << now << " ";
+		now *= 2;
+	}
 	return 0;
 }
 */
