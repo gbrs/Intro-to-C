@@ -1,8 +1,5 @@
-﻿// C_first.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿//1.6.3
 
-
-// 1.5.3
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -10,14 +7,10 @@ using namespace std;
 
 int main()
 {
-	int n, now = 1, i = 0;
-	cin >> n;
-
-	while (now <= n)
-	{
-		cout << now << " ";
-		now *= 2;
-	}
+	double a, b, c, p;
+	cin >> a >> b >> c;
+	p = (a + b + c) / 2;
+	cout << sqrt(p * (p - a) * (p - b) * (p - c));
 	return 0;
 }
 
@@ -385,6 +378,24 @@ int main()
 */
 
 /*
+// 1.6.3
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+	double a, b, c, p;
+	cin >> a >> b >> c;
+	p = (a + b + c) / 2;
+	cout << sqrt(p * (p - a) * (p - b) * (p - c));
+	return 0;
+}
+*/
+
+/*
 1.6.2
 #include <iostream>
 using namespace std;
@@ -398,6 +409,7 @@ int main()
 	return 0;
 }
 */
+
 
 /*
 1.6.1
@@ -924,6 +936,8 @@ int main() {
 */
 
 // lesson 1.2
+
+// C_first.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
