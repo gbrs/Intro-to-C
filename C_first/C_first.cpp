@@ -1,16 +1,32 @@
-﻿//1.6.3
+﻿//1.7.3
 
 #include <iostream>
-#include <cmath>
+#include <vector>
+
 using namespace std;
 
 
 int main()
 {
-	double a, b, c, p;
-	cin >> a >> b >> c;
-	p = (a + b + c) / 2;
-	cout << sqrt(p * (p - a) * (p - b) * (p - c));
+	int i, n, cnt = 0;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (auto number : a)
+	{
+		if (number > 0)
+		{
+			++cnt;
+		}
+	}
+
+	cout << cnt;
+
 	return 0;
 }
 
@@ -317,6 +333,40 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+//1.7.3
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	int i, n, cnt = 0;
+	cin >> n;
+	vector <int> a(n);
+
+	for (i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (auto number : a)
+	{
+		if (number > 0)
+		{
+			++cnt;
+		}
+	}
+
+	cout << cnt;
+
 	return 0;
 }
 */
