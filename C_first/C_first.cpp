@@ -1,32 +1,32 @@
-﻿//1.7.3
+﻿// 1.8.3
 
 #include <iostream>
-#include <vector>
-
+#include <cmath>
 using namespace std;
 
+int main() {
+	const int N = 100;
+	int arr[N][N];
 
-int main()
-{
-	int i, n, cnt = 0;
+	int n;
 	cin >> n;
-	vector <int> a(n);
 
-	for (i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)
 	{
-		cin >> a[i];
-	}
-
-	for (auto number : a)
-	{
-		if (number > 0)
+		for (int j = 0; j < n; j++)
 		{
-			++cnt;
+			arr[i][j] = abs(i - j);
 		}
 	}
-
-	cout << cnt;
-
+	
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
 	return 0;
 }
 
@@ -270,6 +270,40 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.3
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	const int N = 100;
+	int arr[N][N];
+
+	int n;
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = abs(i - j);
+		}
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+	return 0;
 }
 */
 
