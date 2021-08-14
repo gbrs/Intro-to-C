@@ -1,33 +1,23 @@
-﻿// 1.8.3
+﻿//1.9.3
 
 #include <iostream>
-#include <cmath>
+#include <math.h>
 using namespace std;
 
-int main() {
-	const int N = 100;
-	int arr[N][N];
 
-	int n;
-	cin >> n;
+bool IsPointInSquare(double x, double y);
 
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			arr[i][j] = abs(i - j);
-		}
-	}
-	
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cout << arr[i][j] << " ";
-		}
-		cout << endl;
-	}
+int main()
+{
+	double x, y;
+	cin >> x >> y;
+	cout << (IsPointInSquare(x, y) ? "YES":"NO");
 	return 0;
+}
+
+bool IsPointInSquare(double x, double y)
+{
+	return((x >= -1 && x <= 1 && y >= -1 && y <= 1) ? true:false);
 }
 
 
@@ -216,6 +206,30 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.3
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+bool IsPointInSquare(double x, double y);
+
+int main()
+{
+	double x, y;
+	cin >> x >> y;
+	cout << (IsPointInSquare(x, y) ? "YES":"NO");
+	return 0;
+}
+
+bool IsPointInSquare(double x, double y)
+{
+	return((x >= -1 && x <= 1 && y >= -1 && y <= 1) ? true:false);
 }
 */
 
