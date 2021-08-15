@@ -1,35 +1,101 @@
-﻿//1.10.3
+﻿//1.12.3
 
 
 #include <iostream>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
+struct sportsman
+{
+	int number;
+	int score;
+};
+
+bool cmp(sportsman x, sportsman y)
+{
+	return (x.score == y.score) ? x.number < y.number : x.score > y.score;
+}
 
 int main()
 {
-	char c;
-	cin >> c;
-	if (c < 123 and c > 96)
+	
+	
+	int n, num, sc;
+	cin >> n;
+	vector <sportsman> a(n);
+	for (int i = 0; i < n; i++)
 	{
-		cout << (char)(c - 32) << endl;
+		cin >> num >> sc;
+		sportsman tmp;
+		tmp.number = num;
+		tmp.score = sc;
+		a[i] = tmp;
 	}
-	else
-		if (c < 91 and c > 64)
-		{
-			cout << (char)(c + 32) << endl;
-		}
-		else
-		{
-			cout << (char)c << endl;
-		}
-
+	
+	sort(a.begin(), a.end(), cmp);
+	
+	
+	for (int i = 0; i < n; i++)
+	{
+		cout << a[i].number << " " << a[i].score << endl;
+	}
+	
 	return 0;
 }
+
+
 
 /*_____________________________________________________________*/
 
 
+/*
+//1.12.3
 
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+struct sportsman
+{
+	int number;
+	int score;
+};
+
+bool cmp(sportsman x, sportsman y)
+{
+	return (x.score == y.score) ? x.number < y.number : x.score > y.score;
+}
+
+int main()
+{
+
+
+	int n, num, sc;
+	cin >> n;
+	vector <sportsman> a(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> num >> sc;
+		sportsman tmp;
+		tmp.number = num;
+		tmp.score = sc;
+		a[i] = tmp;
+	}
+
+	sort(a.begin(), a.end(), cmp);
+
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << a[i].number << " " << a[i].score << endl;
+	}
+
+	return 0;
+}
+*/
 
 /*
 //1.12.2
@@ -103,6 +169,41 @@ int main()
 	for (i = 0; i < n; i++) {
 		cout << a[i] << " ";
 	}
+
+	return 0;
+}
+*/
+
+/*
+//1.11.3
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+
+int main()
+{
+	int n1, n2, current, len1;
+	set <int> s;
+
+	cin >> n1;
+	for (int i = 0; i < n1; i++)
+	{
+		cin >> current;
+		s.insert(current);
+	}
+
+	len1 = s.size();
+
+	cin >> n2;
+	for (int i = 0; i < n2; i++)
+	{
+		cin >> current;
+		s.insert(current);
+	}
+
+	cout << n2 - (s.size() - len1);
 
 	return 0;
 }
