@@ -1,28 +1,30 @@
-﻿//1.9.3
+﻿//1.10.3
+
 
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 
-bool IsPointInSquare(double x, double y);
-
 int main()
 {
-	double x, y;
-	cin >> x >> y;
-	cout << (IsPointInSquare(x, y) ? "YES":"NO");
+	char c;
+	cin >> c;
+	if (c < 123 and c > 96)
+	{
+		cout << (char)(c - 32) << endl;
+	}
+	else
+		if (c < 91 and c > 64)
+		{
+			cout << (char)(c + 32) << endl;
+		}
+		else
+		{
+			cout << (char)c << endl;
+		}
+
 	return 0;
 }
-
-bool IsPointInSquare(double x, double y)
-{
-	return((x >= -1 && x <= 1 && y >= -1 && y <= 1) ? true:false);
-}
-
-
-
-
 
 /*_____________________________________________________________*/
 
@@ -166,6 +168,36 @@ int main()
 	}
 
 	cout << s.size();
+
+	return 0;
+}
+*/
+
+/*
+//1.10.3
+
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	char c;
+	cin >> c;
+	if (c < 123 and c > 96)
+	{
+		cout << (char)(c - 32) << endl;
+	}
+	else
+		if (c < 91 and c > 64)
+		{
+			cout << (char)(c + 32) << endl;
+		}
+		else
+		{
+			cout << (char)c << endl;
+		}
 
 	return 0;
 }
