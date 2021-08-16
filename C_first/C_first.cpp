@@ -1,46 +1,31 @@
-﻿//1.12.3
-
+﻿// 1.5.3
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <string>
 using namespace std;
 
-struct sportsman
-{
-	int number;
-	int score;
-};
-
-bool cmp(sportsman x, sportsman y)
-{
-	return (x.score == y.score) ? x.number < y.number : x.score > y.score;
-}
 
 int main()
 {
-	
-	
-	int n, num, sc;
+	int n;
+	string response = "YES";
 	cin >> n;
-	vector <sportsman> a(n);
-	for (int i = 0; i < n; i++)
+
+	while (n > 1)
 	{
-		cin >> num >> sc;
-		sportsman tmp;
-		tmp.number = num;
-		tmp.score = sc;
-		a[i] = tmp;
+		if (n % 2 != 0)
+		{
+			response = "NO";
+			break;
+		}
+		else
+		{
+			n /= 2;
+		}
 	}
-	
-	sort(a.begin(), a.end(), cmp);
-	
-	
-	for (int i = 0; i < n; i++)
-	{
-		cout << a[i].number << " " << a[i].score << endl;
-	}
-	
+
+	cout << response;
+
 	return 0;
 }
 
