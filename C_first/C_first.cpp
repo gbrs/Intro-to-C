@@ -1,31 +1,16 @@
-﻿// 1.5.3
+﻿// 1.6.4
 
 #include <iostream>
-#include <string>
 using namespace std;
-
 
 int main()
 {
-	int n;
-	string response = "YES";
-	cin >> n;
-
-	while (n > 1)
-	{
-		if (n % 2 != 0)
-		{
-			response = "NO";
-			break;
-		}
-		else
-		{
-			n /= 2;
-		}
-	}
-
-	cout << response;
-
+	int p, x, y, s;
+	cin >> p >> x >> y;
+	s = (x * 100 + y) * (100 + double(p)) / 100;
+	// не переводим проценты в сотые: умножаем на 100 + p, а уже потом делим на 100, отбрасывая доли копеек
+	// вообще стараемся не делить маленькие числа на большое
+	cout << s / 100 << " " << s % 100;
 	return 0;
 }
 
@@ -594,6 +579,24 @@ int main()
 */
 
 /*
+// 1.6.4
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int p, x, y, s;
+	cin >> p >> x >> y;
+	s = (x * 100 + y) * (100 + double(p)) / 100;
+	// не переводим проценты в сотые: умножаем на 100 + p, а уже потом делим на 100, отбрасывая доли копеек
+	// вообще стараемся не делить маленькие числа на большое
+	cout << s / 100 << " " << s % 100;
+	return 0;
+}
+*/
+
+/*
 // 1.6.3
 
 #include <iostream>
@@ -637,6 +640,39 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.4
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+	int n;
+	string response = "YES";
+	cin >> n;
+
+	while (n > 1)
+	{
+		if (n % 2 != 0)
+		{
+			response = "NO";
+			break;
+		}
+		else
+		{
+			n /= 2;
+		}
+	}
+
+	cout << response;
+
 	return 0;
 }
 */
