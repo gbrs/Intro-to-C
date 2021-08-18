@@ -1,45 +1,24 @@
-﻿// 1.8.4
+﻿//1.10.4
 
 #include <iostream>
-#include <cmath>
+#include <string>
 using namespace std;
 
-int main() {
-	const int N = 100;
-	int arr[N][N];
-
-	int n, m, X, Y, tmp;
-	cin >> n >> m;
-
-	// ввод матрицы
-	for (int i = 0; i < n; i++)
+int main()
+{
+	string s;
+	int cnt = 0;
+	getline(cin, s);
+	
+	for (auto now : s)
 	{
-		for (int j = 0; j < m; j++)
+		if (now == ' ')
 		{
-			cin >> tmp;
-			arr[i][j] = tmp;
+			cnt++;
 		}
 	}
 
-	cin >> X >> Y;
-
-	// обмен значений солбиков
-	for (int i = 0; i < n; i++)
-	{
-		tmp = arr[i][X];
-		arr[i][X] = arr[i][Y];
-		arr[i][Y] = tmp;
-	}
-
-	// вывод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			cout << arr[i][j] << " ";
-		}
-		cout << endl;
-	}
+	cout << cnt + 1;
 
 	return 0;
 }
@@ -275,6 +254,33 @@ int main()
 */
 
 /*
+//1.10.4
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string s;
+	int cnt = 0;
+	getline(cin, s);
+
+	for (auto now : s)
+	{
+		if (now == ' ')
+		{
+			cnt++;
+		}
+	}
+
+	cout << cnt + 1;
+
+	return 0;
+}
+*/
+
+/*
 //1.10.3
 
 
@@ -339,6 +345,30 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.4
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+bool IsPointInSquare(double x, double y);
+
+int main()
+{
+	double x, y;
+	cin >> x >> y;
+	cout << (IsPointInSquare(x, y) ? "YES" : "NO");
+	return 0;
+}
+
+bool IsPointInSquare(double x, double y)
+{
+	return((y >= -x - 1 && y <= x + 1 && y >= x - 1 && y <= -x + 1) ? true : false);
 }
 */
 
