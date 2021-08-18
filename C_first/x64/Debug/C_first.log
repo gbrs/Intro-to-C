@@ -1,4 +1,4 @@
 ﻿  C_first.cpp
-C:\Users\Боря\PycharmProjects\Intro_to_C\C_first\C_first.cpp(10,40): warning C4244: =: преобразование "double" в "int", возможна потеря данных
 LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/PROFILE"
-LINK : fatal error LNK1104: не удается открыть файл "C:\Users\Боря\PycharmProjects\Intro_to_C\x64\Debug\C_first.exe"
+C_first.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/OPT:REF"
+  C_first.vcxproj -> E:\Программирование\Intro_to_C\x64\Debug\C_first.exe
