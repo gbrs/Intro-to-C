@@ -1,28 +1,44 @@
-﻿//1.7.4
+﻿// 1.8.4
 
 #include <iostream>
-#include <vector>
-
+#include <cmath>
 using namespace std;
 
+int main() {
+	const int N = 100;
+	int arr[N][N];
 
-int main()
-{
-	int n;
-	cin >> n;
-	vector <int> a(n);
+	int n, m, X, Y, tmp;
+	cin >> n >> m;
 
-	for (unsigned int i = 0; i < n; i++)
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
 	{
-		cin >> a[i];
+		for (int j = 0; j < m; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
 	}
 
-	for (unsigned int i = 1; i < n; i++)
+	cin >> X >> Y;
+
+	// обмен значений солбиков
+	for (int i = 0; i < n; i++)
 	{
-		if (a[i] > a[i - 1])
+		tmp = arr[i][X];
+		arr[i][X] = arr[i][Y];
+		arr[i][Y] = tmp;
+	}
+
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
 		{
-			cout << a[i] << " ";
+			cout << arr[i][j] << " ";
 		}
+		cout << endl;
 	}
 
 	return 0;
@@ -401,6 +417,54 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.4
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+	const int N = 100;
+	int arr[N][N];
+
+	int n, m, X, Y, tmp;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
+	}
+
+	cin >> X >> Y;
+
+	// обмен значений солбиков
+	for (int i = 0; i < n; i++)
+	{
+		tmp = arr[i][X];
+		arr[i][X] = arr[i][Y];
+		arr[i][Y] = tmp;
+	}
+
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	return 0;
 }
 */
 
@@ -1234,6 +1298,9 @@ int main() {
 */
 
 // lesson 1.2
+
+// КУРС "Введение в программирование (C++)" со Stepik
+// https://stepik.org/course/363/syllabus
 
 // C_first.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 
