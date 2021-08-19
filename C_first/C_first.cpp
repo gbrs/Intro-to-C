@@ -1,24 +1,36 @@
-﻿//1.10.4
+﻿//1.11.4
 
 #include <iostream>
-#include <string>
+#include <set>
 using namespace std;
+
 
 int main()
 {
-	string s;
-	int cnt = 0;
-	getline(cin, s);
-	
-	for (auto now : s)
+	int n1, n2, current, len1;
+	set <int> s, s1;
+
+	cin >> n1;
+	for (int i = 0; i < n1; i++)
 	{
-		if (now == ' ')
+		cin >> current;
+		s1.insert(current);
+	}
+
+	cin >> n2;
+	for (int i = 0; i < n2; i++)
+	{
+		cin >> current;
+		if (s1.find(current) != s1.end())
 		{
-			cnt++;
+			s.insert(current);
 		}
 	}
 
-	cout << cnt + 1;
+	for (auto now : s)
+	{
+		cout << now << " ";
+	}
 
 	return 0;
 }
@@ -154,6 +166,47 @@ int main()
 */
 
 /*
+//1.11.4
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+
+int main()
+{
+	int n1, n2, current, len1;
+	set <int> s, s1;
+
+	//ввод первого множества
+	cin >> n1;
+	for (int i = 0; i < n1; i++)
+	{
+		cin >> current;
+		s1.insert(current);
+	}
+
+	// если число есть во множестве s1, то помещаем его во множество s
+	cin >> n2;
+	for (int i = 0; i < n2; i++)
+	{
+		cin >> current;
+		if (s1.find(current) != s1.end())
+		{
+			s.insert(current);
+		}
+	}
+
+	for (auto now : s)
+	{
+		cout << now << " ";
+	}
+
+	return 0;
+}
+*/
+
+/*
 //1.11.3
 
 #include <iostream>
@@ -166,6 +219,7 @@ int main()
 	int n1, n2, current, len1;
 	set <int> s;
 
+	// первый набор чисел кладу во множество
 	cin >> n1;
 	for (int i = 0; i < n1; i++)
 	{
@@ -175,6 +229,8 @@ int main()
 
 	len1 = s.size();
 
+	// и второй набор чисел в то же множество пихаем
+	// не все запихнутся: там такие уже есть
 	cin >> n2;
 	for (int i = 0; i < n2; i++)
 	{
