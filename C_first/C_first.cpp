@@ -1,44 +1,71 @@
-﻿//1.11.4
+﻿// 1.5.5
 
 #include <iostream>
-#include <set>
 using namespace std;
 
 
 int main()
 {
-	int n1, n2, current, len1;
-	set <int> s, s1;
-
-	cin >> n1;
-	for (int i = 0; i < n1; i++)
-	{
-		cin >> current;
-		s1.insert(current);
-	}
-
-	cin >> n2;
-	for (int i = 0; i < n2; i++)
-	{
-		cin >> current;
-		if (s1.find(current) != s1.end())
-		{
-			s.insert(current);
-		}
-	}
-
-	for (auto now : s)
-	{
-		cout << now << " ";
-	}
-
+	int x, cnt = 0;
+	while (cin >> x && x != 0) cnt++;
+	cout << cnt;
 	return 0;
 }
 
 
-
 /*_____________________________________________________________*/
 
+/*
+//1.12.4
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+// структура, хранящая координаты точек и расстояние до центра
+struct point
+{
+	int x;
+	int y;
+	double r;
+};
+
+// булева функция для сортировки по 3-му столбцу
+bool cmp(point a, point b)
+{
+	return a.r < b.r;
+}
+
+int main()
+{
+	int n, x, y;
+	cin >> n;
+	vector <point> a(n);
+
+	// ввод структур
+	for (int i = 0; i < n; i++)
+	{
+		cin >> x >> y;
+		point tmp;
+		tmp.x = x;
+		tmp.y = y;
+		tmp.r = x * x + y * y;
+		a[i] = tmp;
+	}
+
+	sort(a.begin(), a.end(), cmp);
+
+
+	for (int i = 0; i < n; i++)
+	{
+		cout << a[i].x << " " << a[i].y << endl;
+	}
+
+	return 0;
+}
+*/
 
 /*
 //1.12.3
@@ -836,6 +863,22 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.5
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int x, cnt = 0;
+	while (cin >> x && x != 0) cnt++;
+	cout << cnt;
 	return 0;
 }
 */
