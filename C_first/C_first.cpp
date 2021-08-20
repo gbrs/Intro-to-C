@@ -1,20 +1,32 @@
-﻿// 1.6.5
+﻿//1.7.5
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
+
 
 int main()
 {
-	int p, x, y, k, s;
-	cin >> p >> x >> y >> k;
-	s = (x * 100 + y);
-	for (int i = 0; i < k; i++)
+	int n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (unsigned int i = 0; i < n; i++)
 	{
-		s = (int)s * (100 + p) / 100;
+		cin >> a[i];
 	}
-	// не переводим проценты в сотые: умножаем на 100 + p, а уже потом делим на 100, отбрасывая доли копеек
-	// вообще стараемся не делить маленькие числа на большое
-	cout << s / 100 << " " << s % 100;
+
+	for (unsigned int i = 1; i < n; i++)
+	{
+		if ((a[i] > 0) == (a[i - 1] > 0))
+		{
+			cout << min(a[i], a[i-1]) << " " << max(a[i], a[i - 1]) << endl;
+			break;
+		}
+	}
+
 	return 0;
 }
 
@@ -681,6 +693,40 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+//1.7.5
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+	int n;
+	cin >> n;
+	vector <int> a(n);
+
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (unsigned int i = 1; i < n; i++)
+	{
+		if ((a[i] > 0) == (a[i - 1] > 0))
+		{
+			cout << min(a[i], a[i-1]) << " " << max(a[i], a[i - 1]) << endl;
+			break;
+		}
+	}
+
 	return 0;
 }
 */
