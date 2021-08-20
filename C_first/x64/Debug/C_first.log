@@ -1,6 +1,4 @@
 ﻿  C_first.cpp
-C:\Users\Борис\PycharmProjects\Intro_to_C\C_first\C_first.cpp(16,29): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Борис\PycharmProjects\Intro_to_C\C_first\C_first.cpp(21,29): warning C4018: <: несоответствие типов со знаком и без знака
 LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/PROFILE"
 C_first.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/OPT:REF"
   C_first.vcxproj -> C:\Users\Борис\PycharmProjects\Intro_to_C\x64\Debug\C_first.exe

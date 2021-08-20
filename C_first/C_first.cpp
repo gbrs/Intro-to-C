@@ -1,31 +1,43 @@
-﻿//1.7.5
+﻿// 1.8.5
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <string>
 using namespace std;
 
+int main() {
+	const int N = 10;
+	int arr[N][N];
 
-int main()
-{
-	int n;
+	string answer = "YES";
+	int n, tmp, flag = 0;
 	cin >> n;
-	vector <int> a(n);
 
-	for (unsigned int i = 0; i < n; i++)
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
 	{
-		cin >> a[i];
-	}
-
-	for (unsigned int i = 1; i < n; i++)
-	{
-		if ((a[i] > 0) == (a[i - 1] > 0))
+		for (int j = 0; j < n; j++)
 		{
-			cout << min(a[i], a[i-1]) << " " << max(a[i], a[i - 1]) << endl;
-			break;
+			cin >> tmp;
+			arr[i][j] = tmp;
 		}
 	}
+
+	// проверка симметричности матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if ((i < j) && (arr[i][j] != arr[j][i]))
+			{
+				answer = "NO";
+				flag = 1;
+				break;
+			}
+		}
+		if (flag) break;
+	}
+
+	cout << answer << endl;
 
 	return 0;
 }
@@ -548,6 +560,52 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.5
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	const int N = 10;
+	int arr[N][N];
+
+	string answer = "YES";
+	int n, tmp, flag = 0;
+	cin >> n;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
+	}
+
+	// проверка симметричности матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if ((i < j) && (arr[i][j] != arr[j][i]))
+			{
+				answer = "NO";
+				flag = 1;
+				break;
+			}
+		}
+		if (flag) break;
+	}
+
+	cout << answer << endl;
+
+	return 0;
 }
 */
 
