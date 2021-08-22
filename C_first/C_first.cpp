@@ -1,45 +1,23 @@
-﻿// 1.8.5
+﻿//1.9.5
 
 #include <iostream>
-#include <string>
+#include <math.h>
 using namespace std;
 
-int main() {
-	const int N = 10;
-	int arr[N][N];
 
-	string answer = "YES";
-	int n, tmp, flag = 0;
-	cin >> n;
+bool IsPointInCircle(double x, double y, double xc, double yc, double r);
 
-	// ввод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cin >> tmp;
-			arr[i][j] = tmp;
-		}
-	}
-
-	// проверка симметричности матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			if ((i < j) && (arr[i][j] != arr[j][i]))
-			{
-				answer = "NO";
-				flag = 1;
-				break;
-			}
-		}
-		if (flag) break;
-	}
-
-	cout << answer << endl;
-
+int main()
+{
+	double x, y, xc, yc, r;
+	cin >> x >> y >> xc >> yc >> r;
+	cout << (IsPointInCircle(x, y, xc, yc, r) ? "YES" : "NO");
 	return 0;
+}
+
+bool IsPointInCircle(double x, double y, double xc, double yc, double r)
+{
+	return(((x - xc) * (x - xc) + (y - yc) * (y - yc) <= r * r) ? true : false);
 }
 
 
@@ -458,6 +436,30 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.5
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+bool IsPointInCircle(double x, double y, double xc, double yc, double r);
+
+int main()
+{
+	double x, y, xc, yc, r;
+	cin >> x >> y >> xc >> yc >> r;
+	cout << (IsPointInCircle(x, y, xc, yc, r) ? "YES" : "NO");
+	return 0;
+}
+
+bool IsPointInCircle(double x, double y, double xc, double yc, double r)
+{
+	return(((x - xc) * (x - xc) + (y - yc) * (y - yc) <= r * r) ? true : false);
 }
 */
 
