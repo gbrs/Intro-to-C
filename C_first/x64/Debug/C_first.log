@@ -1,1 +1,2 @@
-﻿  C_first.vcxproj -> C:\Users\Боря\PycharmProjects\Intro_to_C\x64\Debug\C_first.exe
+﻿LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/PROFILE"
+LINK : fatal error LNK1104: не удается открыть файл "C:\Users\Боря\PycharmProjects\Intro_to_C\x64\Debug\C_first.exe"

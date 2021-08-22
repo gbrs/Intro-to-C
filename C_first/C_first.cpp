@@ -1,23 +1,28 @@
-﻿//1.9.5
+﻿//1.10.5
 
 #include <iostream>
-#include <math.h>
+#include <string>
 using namespace std;
-
-
-bool IsPointInCircle(double x, double y, double xc, double yc, double r);
 
 int main()
 {
-	double x, y, xc, yc, r;
-	cin >> x >> y >> xc >> yc >> r;
-	cout << (IsPointInCircle(x, y, xc, yc, r) ? "YES" : "NO");
-	return 0;
-}
+	int n;
+	string s, answer = "YES";
+	cin >> s;
+	n = s.size();
 
-bool IsPointInCircle(double x, double y, double xc, double yc, double r)
-{
-	return(((x - xc) * (x - xc) + (y - yc) * (y - yc) <= r * r) ? true : false);
+	for (int i=0; i < (n / 2); i++)
+	{
+		if (s[i] != s[n - 1 - i])
+		{
+			answer = "NO";
+			break;
+		}
+	}
+
+	cout << answer;
+
+	return 0;
 }
 
 
@@ -339,6 +344,35 @@ int main()
 	}
 
 	cout << s.size();
+
+	return 0;
+}
+*/
+
+/*
+//1.10.5
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	int n;
+	string s, answer = "YES";
+	cin >> s;
+	n = s.size();
+
+	for (int i=0; i < (n / 2); i++)
+	{
+		if (s[i] != s[n - 1 - i])
+		{
+			answer = "NO";
+			break;
+		}
+	}
+
+	cout << answer;
 
 	return 0;
 }
