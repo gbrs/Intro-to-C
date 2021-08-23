@@ -1,28 +1,32 @@
-﻿//1.10.5
+﻿//1.11.5
 
 #include <iostream>
+#include <map>
 #include <string>
 using namespace std;
+
 
 int main()
 {
 	int n;
-	string s, answer = "YES";
-	cin >> s;
-	n = s.size();
+	string current1, current2, request;
+	map <string, string> dict;
 
-	for (int i=0; i < (n / 2); i++)
+	cin >> n;
+
+	//ввод словаря, каждая пара дважды
+	for (int i = 0; i < n; i++)
 	{
-		if (s[i] != s[n - 1 - i])
-		{
-			answer = "NO";
-			break;
-		}
+		cin >> current1 >> current2;
+		dict[current1] = current2;
+		dict[current2] = current1;
 	}
 
-	cout << answer;
-
-	return 0;
+	// вывод пары для задаваемого слова
+	cin >> request;
+	cout << dict[request] << " ";
+	
+return 0;
 }
 
 
@@ -202,6 +206,39 @@ int main()
 	}
 
 	return 0;
+}
+*/
+
+/*
+//1.11.5
+
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+	int n;
+	string current1, current2, request;
+	map <string, string> dict;
+
+	cin >> n;
+
+	//ввод словаря, каждая пара дважды
+	for (int i = 0; i < n; i++)
+	{
+		cin >> current1 >> current2;
+		dict[current1] = current2;
+		dict[current2] = current1;
+	}
+
+	// вывод пары для задаваемого слова
+	cin >> request;
+	cout << dict[request] << " ";
+
+return 0;
 }
 */
 
