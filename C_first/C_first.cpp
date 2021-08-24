@@ -1,30 +1,27 @@
-﻿//1.7.6
+﻿//1.10.6
 
 #include <iostream>
+#include <string>
 #include <vector>
-
 using namespace std;
-
 
 int main()
 {
-	int n, mn = 2147483647;
-	cin >> n;
-	vector <int> a(n);
+	vector <string> arr;
+	string s, longest;
+	int length = 0;
 
-	// ввод массива
-	for (unsigned int i = 0; i < n; i++)
+	while (cin >> s)
 	{
-		cin >> a[i];
+		if (s.size() > length)
+		{
+			longest = s;
+			length = s.size();
+		}
 	}
 
-	// поиск минимального положительного
-	for (unsigned int i = 1; i < n; i++)
-	{
-		if ((a[i] > 0) && (a[i] < mn)) mn = a[i];
-	}
+	cout << longest;
 
-	cout << mn;
 	return 0;
 }
 
@@ -447,6 +444,35 @@ int main()
 */
 
 /*
+//1.10.6
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	vector <string> arr;
+	string s, longest;
+	int length = 0;
+
+	while (cin >> s)
+	{
+		if (s.size() > length)
+		{
+			longest = s;
+			length = s.size();
+		}
+	}
+
+	cout << longest;
+
+	return 0;
+}
+*/
+
+/*
 //1.10.5
 
 #include <iostream>
@@ -567,6 +593,33 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.6
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+
+bool IsPointInCircle(int x, int y);
+
+int main()
+{
+	int x, y;
+	cin >> x >> y;
+	cout << (IsPointInCircle(x, y) ? "YES" : "NO");
+	return 0;
+}
+
+bool IsPointInCircle(int x, int y)
+{
+	return((
+		(((x + 1)*(x + 1) + (y - 1)*(y - 1) <= 4) && (y >= -x) && (y >= 2 * x + 2))
+		| (((x + 1)*(x + 1) + (y - 1)*(y - 1) >= 4) && (y <= -x) && (y <= 2 * x + 2))
+		) ? true : false);
 }
 */
 
@@ -693,6 +746,44 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.6
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	const int N = 10;
+	int arr[N][N];
+
+	int n, tmp, k;
+	cin >> n;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
+	}
+
+	cin >> k;
+
+	// вывод чисел с диагонали параллельной главной
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if ((i - j) == k) cout << arr[i][j] << " ";
+		}
+	}
+
+	return 0;
 }
 */
 
