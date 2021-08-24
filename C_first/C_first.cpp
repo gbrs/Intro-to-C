@@ -1,36 +1,96 @@
-﻿//1.11.5
+﻿//1.7.6
 
 #include <iostream>
-#include <map>
-#include <string>
+#include <vector>
+
 using namespace std;
 
 
 int main()
 {
-	int n;
-	string current1, current2, request;
-	map <string, string> dict;
-
+	int n, mn = 2147483647;
 	cin >> n;
+	vector <int> a(n);
 
-	//ввод словаря, каждая пара дважды
-	for (int i = 0; i < n; i++)
+	// ввод массива
+	for (unsigned int i = 0; i < n; i++)
 	{
-		cin >> current1 >> current2;
-		dict[current1] = current2;
-		dict[current2] = current1;
+		cin >> a[i];
 	}
 
-	// вывод пары для задаваемого слова
-	cin >> request;
-	cout << dict[request] << " ";
-	
-return 0;
+	// поиск минимального положительного
+	for (unsigned int i = 1; i < n; i++)
+	{
+		if ((a[i] > 0) && (a[i] < mn)) mn = a[i];
+	}
+
+	cout << mn;
+	return 0;
 }
 
 
+
 /*_____________________________________________________________*/
+
+/*
+//1.12.5
+
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+using namespace std;
+
+// структура, хранящая все данные + сумму оценок
+struct tabel
+{
+	string surname;
+	string name;
+	int math;
+	int phys;
+	int inf;
+	double sm;
+};
+
+// булева функция для сортировки по столбцу суммы
+bool cmp(tabel a, tabel b)
+{
+	return a.sm > b.sm;
+}
+
+int main()
+{
+	string w, v;
+	int n, x, y, z;
+	cin >> n;
+	vector <tabel> a(n);
+
+	// ввод структур
+	for (int i = 0; i < n; i++)
+	{
+		cin >> w >> v >> x >> y >> z;
+		tabel tmp;
+		tmp.surname = w;
+		tmp.name = v;
+		tmp.math = x;
+		tmp.phys = y;
+		tmp.inf = z;
+		tmp.sm = x + y + z;
+		a[i] = tmp;
+	}
+
+	stable_sort(a.begin(), a.end(), cmp);
+
+	// вывод
+	for (int i = 0; i < n; i++)
+	{
+		cout << a[i].surname << " " << a[i].name << endl;
+	}
+
+	return 0;
+}
+*/
 
 /*
 //1.12.4
@@ -829,6 +889,38 @@ int main() {
 */
 
 /*
+//1.7.6
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	int n, mn = 2147483647;
+	cin >> n;
+	vector <int> a(n);
+
+	// ввод массива
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	// поиск минимального положительного
+	for (unsigned int i = 1; i < n; i++)
+	{
+		if ((a[i] > 0) && (a[i] < mn)) mn = a[i];
+	}
+
+	cout << mn;
+	return 0;
+}
+*/
+
+/*
 //1.7.5
 
 #include <iostream>
@@ -985,6 +1077,30 @@ int main()
 */
 
 /*
+// 1.6.6
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+
+int main()
+{
+	int x, cnt = 0, sm = 0;
+	while (cin >> x && x != 0)
+	{
+		sm += x;
+		cnt += 1;
+	}
+
+	cout << setprecision(11) << fixed;
+	cout << (double)sm / cnt;
+
+	return 0;
+}
+*/
+
+/*
 // 1.6.5
 
 #include <iostream>
@@ -1068,6 +1184,22 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.6
+
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	int x, sm = 0;
+	while (cin >> x && x != 0) sm += x;
+	cout << sm;
 	return 0;
 }
 */
