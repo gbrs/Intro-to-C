@@ -1,26 +1,14 @@
 ﻿//1.10.6
 
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
 
 int main()
 {
-	vector <string> arr;
-	string s, longest;
-	int length = 0;
-
-	while (cin >> s)
-	{
-		if (s.size() > length)
-		{
-			longest = s;
-			length = s.size();
-		}
-	}
-
-	cout << longest;
+	int a, b, c, d;
+	cin >> a;
+	cin >> b >> c >> d;
+	cout << a << b << c << d;
 
 	return 0;
 }
