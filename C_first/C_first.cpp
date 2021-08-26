@@ -1,15 +1,15 @@
-﻿//1.10.6
+﻿// 1.5.7
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
+
 
 int main()
 {
-	int a, b, c, d;
-	cin >> a;
-	cin >> b >> c >> d;
-	cout << a << b << c << d;
-
+	int x, mx = 0;
+	while (cin >> x && x != 0) mx = max(mx, x);
+	cout << mx;
 	return 0;
 }
 
@@ -1263,6 +1263,23 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.7
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main()
+{
+	int x, mx = 0;
+	while (cin >> x && x != 0) mx = max(mx, x);
+	cout << mx;
 	return 0;
 }
 */
