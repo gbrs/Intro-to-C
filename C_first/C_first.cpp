@@ -1,15 +1,36 @@
-﻿// 1.5.7
+﻿// 1.6.7
 
 #include <iostream>
-#include <algorithm>
+#include <iomanip>
+#include <vector>
+#include <cmath>;
 using namespace std;
 
 
 int main()
 {
-	int x, mx = 0;
-	while (cin >> x && x != 0) mx = max(mx, x);
-	cout << mx;
+	int x, cnt = 0;
+	long long s = 0, sigma = 0;
+	vector <int> arr;
+
+	// подсчет суммы и забивание входных данных в массив
+	while (cin >> x && x != 0)
+	{
+		arr.push_back(x);
+		s += x;
+		cnt += 1;
+	}
+
+	// стараюсь оставаться в целых числах. Поэтому пришлось использовать long long - большие числа
+	for (auto now : arr)
+	{
+		sigma += (cnt * now - s) * (cnt * now - s);
+	}
+
+	// и только на выводе переходим в double
+	cout << setprecision(11) << fixed;
+	cout << sqrt((double) sigma / cnt / cnt / (cnt - 1));
+
 	return 0;
 }
 
@@ -1150,6 +1171,44 @@ int main()
 	for (i = 0; i < n; i += 2) {
 		cout << a[i] << " ";
 	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.6.7
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <cmath>;
+using namespace std;
+
+
+int main()
+{
+	int x, cnt = 0;
+	long long s = 0, sigma = 0;
+	vector <int> arr;
+
+	// подсчет суммы и забивание входных данных в массив
+	while (cin >> x && x != 0)
+	{
+		arr.push_back(x);
+		s += x;
+		cnt += 1;
+	}
+
+	// стараюсь оставаться в целых числах. Поэтому пришлось использовать long long - большие числа
+	for (auto now : arr)
+	{
+		sigma += (cnt * now - s) * (cnt * now - s);
+	}
+
+	// и только на выводе переходим в double
+	cout << setprecision(11) << fixed;
+	cout << sqrt((double) sigma / cnt / cnt / (cnt - 1));
 
 	return 0;
 }
