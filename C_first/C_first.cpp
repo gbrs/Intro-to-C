@@ -1,30 +1,43 @@
-﻿//1.7.7
+﻿// 1.8.7
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
-
 using namespace std;
 
+int main() {
+	const int N = 1000;
+	int arr[N][N], transp[N][N];
 
-int main()
-{
-	// пришлось так грубо, т.к. есть проверка с максимальным int числом
-	long long n, mn = 2147483649;
-	cin >> n;
-	vector <long long> a(n);
+	int n, m, tmp;
+	cin >> n >> m;
 
-	for (unsigned int i = 0; i < n; i++)
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
 	{
-		cin >> a[i];
+		for (int j = 0; j < m; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
 	}
 
-	for (auto now: a)
+	// транспонирование матрицы
+	for (int i = 0; i < m; i++)
 	{
-		if ((now % 2 != 0)) mn = min(mn, now);
+		for (int j = 0; j < n; j++)
+		{
+			transp[i][j] = arr[j][i];
+		}
 	}
-		
-	mn == 2147483649 ? cout << 0 : cout << mn;
+
+	// вывод трансонированной матрицы
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << transp[i][j] << " ";
+		}
+		cout << endl;
+	}
 
 	return 0;
 }
@@ -750,6 +763,52 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.7
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	const int N = 1000;
+	int arr[N][N], transp[N][N];
+
+	int n, m, tmp;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
+	}
+
+	// транспонирование матрицы
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			transp[i][j] = arr[j][i];
+		}
+	}
+
+	// вывод трансонированной матрицы
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << transp[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	return 0;
 }
 */
 
