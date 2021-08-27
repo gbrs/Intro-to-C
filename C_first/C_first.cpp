@@ -1,35 +1,30 @@
-﻿// 1.6.7
+﻿//1.7.7
 
 #include <iostream>
-#include <iomanip>
 #include <vector>
-#include <cmath>;
+#include <algorithm>
+
 using namespace std;
 
 
 int main()
 {
-	int x, cnt = 0;
-	long long s = 0, sigma = 0;
-	vector <int> arr;
+	// пришлось так грубо, т.к. есть проверка с максимальным int числом
+	long long n, mn = 2147483649;
+	cin >> n;
+	vector <long long> a(n);
 
-	// подсчет суммы и забивание входных данных в массив
-	while (cin >> x && x != 0)
+	for (unsigned int i = 0; i < n; i++)
 	{
-		arr.push_back(x);
-		s += x;
-		cnt += 1;
+		cin >> a[i];
 	}
 
-	// стараюсь оставаться в целых числах. Поэтому пришлось использовать long long - большие числа
-	for (auto now : arr)
+	for (auto now: a)
 	{
-		sigma += (cnt * now - s) * (cnt * now - s);
+		if ((now % 2 != 0)) mn = min(mn, now);
 	}
-
-	// и только на выводе переходим в double
-	cout << setprecision(11) << fixed;
-	cout << sqrt((double) sigma / cnt / cnt / (cnt - 1));
+		
+	mn == 2147483649 ? cout << 0 : cout << mn;
 
 	return 0;
 }
@@ -984,6 +979,40 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+//1.7.7
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+int main()
+{
+	// пришлось так грубо, т.к. есть проверка с максимальным int числом
+	// Можно было проще не <, а <= и вместо 0 записалось бы это число.
+	long long n, mn = 2147483649;
+	cin >> n;
+	vector <long long> a(n);
+
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	for (auto now: a)
+	{
+		if ((now % 2 != 0)) mn = min(mn, now);
+	}
+
+	mn == 2147483649 ? cout << 0 : cout << mn;
+
 	return 0;
 }
 */
