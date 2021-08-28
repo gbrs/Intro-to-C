@@ -1,44 +1,87 @@
-﻿// 1.8.7
+﻿//1.10.7
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-	const int N = 1000;
-	int arr[N][N], transp[N][N];
+int main()
+{
+	string s;
+	int number, cnt = 0, start = 0;
+	cin >> s;
+	bool flag = true;
 
-	int n, m, tmp;
-	cin >> n >> m;
-
-	// ввод матрицы
-	for (int i = 0; i < n; i++)
+	// Проверяю кучу условий
+	// не слишком ли много знаков
+	if (s.size() > 19)
 	{
-		for (int j = 0; j < m; j++)
+		// cout << "NO long";
+		cout << "NO";
+		return 0;
+	}
+
+	// все ли знаки точки и цифры
+	for (auto now : s)
+	{
+		if ((now < '0' or now > '9') and now != '.')
 		{
-			cin >> tmp;
-			arr[i][j] = tmp;
+			// cout << "NO znak";
+			cout << "NO";
+			return 0;
 		}
 	}
 
-	// транспонирование матрицы
-	for (int i = 0; i < m; i++)
+	// точек три?
+	for (auto now : s)
 	{
-		for (int j = 0; j < n; j++)
+		if (now == '.')
 		{
-			transp[i][j] = arr[j][i];
+			cnt += 1;
 		}
 	}
-
-	// вывод трансонированной матрицы
-	for (int i = 0; i < m; i++)
+	if (cnt != 3)
 	{
-		for (int j = 0; j < n; j++)
-		{
-			cout << transp[i][j] << " ";
-		}
-		cout << endl;
+		// cout << "NO q points";
+		cout << "NO";
+		return 0;
 	}
 
+	// точки не стоят рядом или на первом и последнем месте?
+	for (int i = 2; i < s.size() - 1; i++)
+	{
+		if (s[i] == '.' and s[i - 1] == '.')
+		{
+			flag = false;
+		}
+	}
+	if ((not  flag) or (s[0] == '.') or (s[s.size() - 1] == '.'))
+	{
+		// cout << "NO p points";
+		cout << "NO";
+		return 0;
+	}
+
+	// и только теперь проверка трех чисел на <255 и меньше 4 знаков
+	flag = true;
+	for (int i=0; i < s.size(); i++)
+	{
+		if (s[i] == '.')
+		{
+			number = stoi(s.substr(start, i - start + 1));
+			if (number > 255 or (i - start) > 3) flag = false;
+			start = i + 1;
+		}
+	}
+	// и проверка четвертого числа
+	if ((not flag) or (stoi(s.substr(start)) > 255) or ((s.size() - start) > 3))
+	{
+		// cout << "NO number";
+		cout << "NO";
+		return 0;
+	}
+
+	cout << "YES";
+	
 	return 0;
 }
 
@@ -461,6 +504,95 @@ int main()
 */
 
 /*
+//1.10.7
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string s;
+	int number, cnt = 0, start = 0;
+	cin >> s;
+	bool flag = true;
+
+	// Проверяю кучу условий
+	// не слишком ли много знаков
+	if (s.size() > 19)
+	{
+		// cout << "NO long";
+		cout << "NO";
+		return 0;
+	}
+
+	// все ли знаки точки и цифры
+	for (auto now : s)
+	{
+		if ((now < '0' or now > '9') and now != '.')
+		{
+			// cout << "NO znak";
+			cout << "NO";
+			return 0;
+		}
+	}
+
+	// точек три?
+	for (auto now : s)
+	{
+		if (now == '.')
+		{
+			cnt += 1;
+		}
+	}
+	if (cnt != 3)
+	{
+		// cout << "NO q points";
+		cout << "NO";
+		return 0;
+	}
+
+	// точки не стоят рядом или на первом и последнем месте?
+	for (int i = 2; i < s.size() - 1; i++)
+	{
+		if (s[i] == '.' and s[i - 1] == '.')
+		{
+			flag = false;
+		}
+	}
+	if ((not  flag) or (s[0] == '.') or (s[s.size() - 1] == '.'))
+	{
+		// cout << "NO p points";
+		cout << "NO";
+		return 0;
+	}
+
+	// и только теперь проверка трех чисел на <255 и меньше 4 знаков
+	flag = true;
+	for (int i=0; i < s.size(); i++)
+	{
+		if (s[i] == '.')
+		{
+			number = stoi(s.substr(start, i - start + 1));
+			if (number > 255 or (i - start) > 3) flag = false;
+			start = i + 1;
+		}
+	}
+	// и проверка четвертого числа
+	if ((not flag) or (stoi(s.substr(start)) > 255) or ((s.size() - start) > 3))
+	{
+		// cout << "NO number";
+		cout << "NO";
+		return 0;
+	}
+
+	cout << "YES";
+
+	return 0;
+}
+*/
+
+/*
 //1.10.6
 
 #include <iostream>
@@ -610,6 +742,33 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.7
+
+#include <iostream>
+using namespace std;
+
+
+double power(double a, int n);
+
+int main()
+{
+	int n;
+	double a;
+	cin >> a >> n;
+	// обрабатываем вариант с отрицательной степенью
+	cout << power(a, n);
+	return 0;
+}
+
+double power(double a, int n)
+{
+	if (n == 0) return 1;
+	if (n >= 1) return a * power(a, n - 1);
+	return power(a, n + 1) / a;
 }
 */
 
