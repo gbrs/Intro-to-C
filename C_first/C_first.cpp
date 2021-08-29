@@ -1,89 +1,29 @@
-﻿//1.10.7
+﻿// 1.5.8
 
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main()
 {
-	string s;
-	int number, cnt = 0, start = 0;
-	cin >> s;
-	bool flag = true;
-
-	// Проверяю кучу условий
-	// не слишком ли много знаков
-	if (s.size() > 19)
-	{
-		// cout << "NO long";
-		cout << "NO";
-		return 0;
-	}
-
-	// все ли знаки точки и цифры
-	for (auto now : s)
-	{
-		if ((now < '0' or now > '9') and now != '.')
+	int x, mx = 0, cnt = 0;
+	while (cin >> x && x != 0)
+		if (x > mx)
 		{
-			// cout << "NO znak";
-			cout << "NO";
-			return 0;
+			mx = x;
+			cnt = 1;
 		}
-	}
-
-	// точек три?
-	for (auto now : s)
-	{
-		if (now == '.')
+		else
 		{
-			cnt += 1;
+			if (x == mx)
+			{
+				cnt += 1;
+			}
 		}
-	}
-	if (cnt != 3)
-	{
-		// cout << "NO q points";
-		cout << "NO";
-		return 0;
-	}
 
-	// точки не стоят рядом или на первом и последнем месте?
-	for (int i = 2; i < s.size() - 1; i++)
-	{
-		if (s[i] == '.' and s[i - 1] == '.')
-		{
-			flag = false;
-		}
-	}
-	if ((not  flag) or (s[0] == '.') or (s[s.size() - 1] == '.'))
-	{
-		// cout << "NO p points";
-		cout << "NO";
-		return 0;
-	}
-
-	// и только теперь проверка трех чисел на <255 и меньше 4 знаков
-	flag = true;
-	for (int i=0; i < s.size(); i++)
-	{
-		if (s[i] == '.')
-		{
-			number = stoi(s.substr(start, i - start + 1));
-			if (number > 255 or (i - start) > 3) flag = false;
-			start = i + 1;
-		}
-	}
-	// и проверка четвертого числа
-	if ((not flag) or (stoi(s.substr(start)) > 255) or ((s.size() - start) > 3))
-	{
-		// cout << "NO number";
-		cout << "NO";
-		return 0;
-	}
-
-	cout << "YES";
-	
+	cout << cnt;
 	return 0;
 }
+
 
 
 
@@ -518,6 +458,7 @@ int main()
 	bool flag = true;
 
 	// Проверяю кучу условий
+
 	// не слишком ли много знаков
 	if (s.size() > 19)
 	{
@@ -1569,6 +1510,34 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.8
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x, mx = 0, cnt = 0;
+	while (cin >> x && x != 0)
+		if (x > mx)
+		{
+			mx = x;
+			cnt = 1;
+		}
+		else
+		{
+			if (x == mx)
+			{
+				cnt += 1;
+			}
+		}
+
+	cout << cnt;
 	return 0;
 }
 */
