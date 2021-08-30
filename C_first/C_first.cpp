@@ -1,28 +1,4 @@
-﻿// 1.5.8
-
-#include <iostream>
-using namespace std;
-
-int main()
-{
-	int x, mx = 0, cnt = 0;
-	while (cin >> x && x != 0)
-		if (x > mx)
-		{
-			mx = x;
-			cnt = 1;
-		}
-		else
-		{
-			if (x == mx)
-			{
-				cnt += 1;
-			}
-		}
-
-	cout << cnt;
-	return 0;
-}
+﻿// 1.6.8
 
 
 
@@ -1360,6 +1336,30 @@ int main()
 		cout << a[i] << " ";
 	}
 
+	return 0;
+}
+*/
+
+/*
+// 1.6.8
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n;
+	double x, a, sm;
+	cin >> n;
+	cin >> x;
+	cin >> a;
+	sm = a;
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a;
+		sm = sm * x + a;
+	}
+	cout << sm;
 	return 0;
 }
 */
