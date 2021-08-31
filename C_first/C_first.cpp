@@ -1,4 +1,61 @@
-﻿// 1.6.8
+﻿// 1.8.8
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	const int N = 20;
+	int arr[N][N];
+
+	bool flag = false;
+	int n, m, k, cnt=0;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+
+	cin >> k;
+
+	// подсчет свободных мест
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (arr[i][j] == 0)
+			{
+				cnt++;
+				if (cnt == k)
+				{
+					cout << i + 1 << endl;
+					flag = true;
+					break;
+				}
+			}
+			else
+			{
+				cnt = 0;
+			}
+		}
+		if (flag)
+		{
+			break;
+		}
+		cnt = 0;
+	}
+
+	if (!flag)
+	{
+		cout << 0;
+	}
+
+	return 0;
+}
 
 
 
@@ -843,6 +900,67 @@ int min4(int a, int b, int c, int d)
 */
 
 /*
+// 1.8.8
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	const int N = 20;
+	int arr[N][N];
+
+	bool flag = false;
+	int n, m, k, cnt=0;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> arr[i][j];
+		}
+	}
+
+	cin >> k;
+
+	// подсчет свободных мест
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (arr[i][j] == 0)
+			{
+				cnt++;
+				if (cnt == k)
+				{
+					cout << i + 1 << endl;
+					flag = true;
+					break;
+				}
+			}
+			else
+			{
+				cnt = 0;
+			}
+		}
+		if (flag)
+		{
+			break;
+		}
+		cnt = 0;
+	}
+
+	if (!flag)
+	{
+		cout << 0;
+	}
+
+	return 0;
+}
+*/
+
+/*
 // 1.8.7
 
 #include <iostream>
@@ -1114,6 +1232,37 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.8
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	int n, cnt = 1, tmp;
+	cin >> n;
+	vector <int> arr(n);
+
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	for (int i=1; i < n; i++)
+	{
+		if (arr[i-1] != arr[i]) cnt++;
+	}
+
+	cout << cnt;
+
 	return 0;
 }
 */
