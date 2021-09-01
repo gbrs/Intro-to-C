@@ -1,60 +1,24 @@
-﻿// 1.8.8
+﻿//1.9.8
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int main() {
-	const int N = 20;
-	int arr[N][N];
+int MinDivisor(int n);
 
-	bool flag = false;
-	int n, m, k, cnt=0;
-	cin >> n >> m;
-
-	// ввод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			cin >> arr[i][j];
-		}
-	}
-
-	cin >> k;
-
-	// подсчет свободных мест
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (arr[i][j] == 0)
-			{
-				cnt++;
-				if (cnt == k)
-				{
-					cout << i + 1 << endl;
-					flag = true;
-					break;
-				}
-			}
-			else
-			{
-				cnt = 0;
-			}
-		}
-		if (flag)
-		{
-			break;
-		}
-		cnt = 0;
-	}
-
-	if (!flag)
-	{
-		cout << 0;
-	}
-
+int main()
+{
+	int n;
+	cin >> n;
+	cout << MinDivisor(n);
 	return 0;
+}
+
+int MinDivisor(int n)
+{
+	for (int i = 2; i <= (int)sqrt(n); i++)
+		if (n % i == 0) return i;
+	return n;
 }
 
 
@@ -716,6 +680,31 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.8
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int MinDivisor(int n);
+
+int main()
+{
+	int n;
+	cin >> n;
+	cout << MinDivisor(n);
+	return 0;
+}
+
+int MinDivisor(int n)
+{
+	for (int i = 2; i <= (int)sqrt(n); i++)
+		if (n % i == 0) return i;
+	return n;
 }
 */
 
