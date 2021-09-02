@@ -1,26 +1,27 @@
-﻿// 1.5.9
+﻿// 1.6.9
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-	int x, mx = 0, mx2 = 0;
-	while (cin >> x && x != 0)
-		if (x >= mx)
-		{
-			mx2 = mx;
-			mx = x;
-		}
-		else
-		{
-			if (x > mx2)
-			{
-				mx2 = x;
-			}
-		}
+	double a, b, c, x1, x2, d;
+	cin >> a >> b >> c;
+	
+	d = b * b - 4 * a * c;
 
-	cout << mx2;
+	if (abs(d) < 0.00001) cout << (-b / 2/ a);
+	else
+	{
+		if (d > 0.00001)
+		{
+			x1 = (-b - sqrt(d)) / (2 * a);
+			x2 = (-b + sqrt(d)) / (2 * a);
+			cout << min(x1, x2) << " " << max(x1, x2);
+		}
+	}
+
 	return 0;
 }
 
@@ -1222,6 +1223,42 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.9
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int n, spam;
+	cin >> n;
+	vector <int> arr(n);
+
+	// считывание
+	for (int i=0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	// обмен местами соседей
+	for (int i=1; i < n; i+=2)
+	{
+		spam = arr[i];
+		arr[i] = arr[i - 1];
+		arr[i - 1] = spam;
+	}
+
+	// вывод
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
 	return 0;
 }
 */
