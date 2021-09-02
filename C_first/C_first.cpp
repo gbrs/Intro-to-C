@@ -1,27 +1,28 @@
-﻿//1.9.8
+﻿// 1.5.9
 
 #include <iostream>
-#include <cmath>
 using namespace std;
-
-int MinDivisor(int n);
 
 int main()
 {
-	int n;
-	cin >> n;
-	cout << MinDivisor(n);
+	int x, mx = 0, mx2 = 0;
+	while (cin >> x && x != 0)
+		if (x >= mx)
+		{
+			mx2 = mx;
+			mx = x;
+		}
+		else
+		{
+			if (x > mx2)
+			{
+				mx2 = x;
+			}
+		}
+
+	cout << mx2;
 	return 0;
 }
-
-int MinDivisor(int n)
-{
-	for (int i = 2; i <= (int)sqrt(n); i++)
-		if (n % i == 0) return i;
-	return n;
-}
-
-
 
 
 /*_____________________________________________________________*/
@@ -1648,6 +1649,34 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.9
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x, mx = 0, mx2 = 0;
+	while (cin >> x && x != 0)
+		if (x >= mx)
+		{
+			mx2 = mx;
+			mx = x;
+		}
+		else
+		{
+			if (x > mx2)
+			{
+				mx2 = x;
+			}
+		}
+
+	cout << mx2;
 	return 0;
 }
 */
