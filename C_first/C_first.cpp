@@ -1,28 +1,22 @@
-﻿//1.9.9
+﻿// 1.5.10
 
 #include <iostream>
 using namespace std;
 
-bool IsPrime(int n);
-
 int main()
 {
-	int n;
+	int n, x1=0, x2=1, tmp, cnt=1;
 	cin >> n;
-	if (n == 2)
+	while (cnt < n)
 	{
-		cout << "YES";
-		return 0;
+		tmp = x1 + x2;
+		x1 = x2;
+		x2 = tmp;
+		n--;
 	}
-	cout << (IsPrime(n) ? "YES" : "NO");
+	
+	cout << x2;
 	return 0;
-}
-
-bool IsPrime(int n)
-{
-	for (int i = 2; i * i <= n; i++)
-		if (n % i == 0) return false;
-	return true;
 }
 
 
@@ -1761,6 +1755,29 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.10
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, x1=0, x2=1, tmp, cnt=1;
+	cin >> n;
+	while (cnt < n)
+	{
+		tmp = x1 + x2;
+		x1 = x2;
+		x2 = tmp;
+		n--;
+	}
+
+	cout << x2;
 	return 0;
 }
 */
