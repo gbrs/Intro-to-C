@@ -1,23 +1,59 @@
-﻿// 1.5.10
+﻿// 1.6.10
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-	int n, x1=0, x2=1, tmp, cnt=1;
-	cin >> n;
-	while (cnt < n)
+	double a, b, c, x1, x2, d;
+	cin >> a >> b >> c;
+
+	if (a == 0)
 	{
-		tmp = x1 + x2;
-		x1 = x2;
-		x2 = tmp;
-		n--;
+		if (b == 0)
+		{
+			if (c == 0)
+			{
+				cout << 3;
+			}
+			else
+			{
+				cout << 0;
+			}
+		}
+		else
+		{
+			cout << 1 << " " << (-c / b);
+		}
+	}
+	else
+	{
+		d = b * b - 4 * a * c;
+
+		if (d < -0.00001)
+		{
+			cout << 0;
+		}
+		else
+		{
+			if ((d < 0.00001) and (d > -0.00001)) cout << 1 << " " << (-b / 2 / a);
+			else
+			{
+				if (d > 0.00001)
+				{
+					x1 = (-b - sqrt(d)) / (2 * a);
+					x2 = (-b + sqrt(d)) / (2 * a);
+					cout << 2 << " " << min(x1, x2) << " " << max(x1, x2);
+				}
+			}
+		}
+		
 	}
 	
-	cout << x2;
 	return 0;
 }
+
 
 
 /*_____________________________________________________________*/
@@ -1579,6 +1615,93 @@ int main()
 
 	for (i = 0; i < n; i += 2) {
 		cout << a[i] << " ";
+	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.6.10
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double a, b, c, x1, x2, d;
+	cin >> a >> b >> c;
+
+	if (a == 0)
+	{
+		if (b == 0)
+		{
+			if (c == 0)
+			{
+				cout << 3;
+			}
+			else
+			{
+				cout << 0;
+			}
+		}
+		else
+		{
+			cout << 1 << " " << (-c / b);
+		}
+	}
+	else
+	{
+		d = b * b - 4 * a * c;
+
+		if (d < -0.00001)
+		{
+			cout << 0;
+		}
+		else
+		{
+			if ((d < 0.00001) and (d > -0.00001)) cout << 1 << " " << (-b / 2 / a);
+			else
+			{
+				if (d > 0.00001)
+				{
+					x1 = (-b - sqrt(d)) / (2 * a);
+					x2 = (-b + sqrt(d)) / (2 * a);
+					cout << 2 << " " << min(x1, x2) << " " << max(x1, x2);
+				}
+			}
+		}
+
+	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.6.9
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double a, b, c, x1, x2, d;
+	cin >> a >> b >> c;
+
+	d = b * b - 4 * a * c;
+
+	if (abs(d) < 0.00001) cout << (-b / 2/ a);
+	else
+	{
+		if (d > 0.00001)
+		{
+			x1 = (-b - sqrt(d)) / (2 * a);
+			x2 = (-b + sqrt(d)) / (2 * a);
+			cout << min(x1, x2) << " " << max(x1, x2);
+		}
 	}
 
 	return 0;
