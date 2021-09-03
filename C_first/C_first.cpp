@@ -1,45 +1,28 @@
-﻿// 1.8.9
+﻿//1.9.9
 
 #include <iostream>
 using namespace std;
 
-int main() {
-	const int N = 100;
-	int arr[N][N], transp[N][N];
+bool IsPrime(int n);
 
-	int n, m, tmp;
-	cin >> n >> m;
-
-	// ввод матрицы
-	for (int i = 0; i < n; i++)
+int main()
+{
+	int n;
+	cin >> n;
+	if (n == 2)
 	{
-		for (int j = 0; j < m; j++)
-		{
-			cin >> tmp;
-			arr[i][j] = tmp;
-		}
+		cout << "YES";
+		return 0;
 	}
-
-	// поворот матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			transp[j][n - i - 1] = arr[i][j];
-		}
-	}
-
-	// вывод повернутой матрицы
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cout << transp[i][j] << " ";
-		}
-		cout << endl;
-	}
-
+	cout << (IsPrime(n) ? "YES" : "NO");
 	return 0;
+}
+
+bool IsPrime(int n)
+{
+	for (int i = 2; i * i <= n; i++)
+		if (n % i == 0) return false;
+	return true;
 }
 
 
@@ -699,6 +682,35 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.9
+
+#include <iostream>
+using namespace std;
+
+bool IsPrime(int n);
+
+int main()
+{
+	int n;
+	cin >> n;
+	if (n == 2)
+	{
+		cout << "YES";
+		return 0;
+	}
+	cout << (IsPrime(n) ? "YES" : "NO");
+	return 0;
+}
+
+bool IsPrime(int n)
+{
+	for (int i = 2; i * i <= n; i++)
+		if (n % i == 0) return false;
+	return true;
 }
 */
 
