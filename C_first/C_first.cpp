@@ -1,25 +1,42 @@
-﻿// 1.6.9
+﻿// 1.8.9
 
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-int main()
-{
-	double a, b, c, x1, x2, d;
-	cin >> a >> b >> c;
-	
-	d = b * b - 4 * a * c;
+int main() {
+	const int N = 100;
+	int arr[N][N], transp[N][N];
 
-	if (abs(d) < 0.00001) cout << (-b / 2/ a);
-	else
+	int n, m, tmp;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
 	{
-		if (d > 0.00001)
+		for (int j = 0; j < m; j++)
 		{
-			x1 = (-b - sqrt(d)) / (2 * a);
-			x2 = (-b + sqrt(d)) / (2 * a);
-			cout << min(x1, x2) << " " << max(x1, x2);
+			cin >> tmp;
+			arr[i][j] = tmp;
 		}
+	}
+
+	// поворот матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			transp[j][n - i - 1] = arr[i][j];
+		}
+	}
+
+	// вывод повернутой матрицы
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << transp[i][j] << " ";
+		}
+		cout << endl;
 	}
 
 	return 0;
@@ -891,14 +908,60 @@ int min4(int a, int b, int c, int d)
 */
 
 /*
-// 1.8.8
+// 1.8.9
 
 #include <iostream>
 using namespace std;
 
 int main() {
-	const int N = 20;
-	int arr[N][N];
+	const int N = 100;
+	int arr[N][N], transp[N][N];
+
+	int n, m, tmp;
+	cin >> n >> m;
+
+	// ввод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> tmp;
+			arr[i][j] = tmp;
+		}
+	}
+
+	// поворот матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			transp[j][n - i - 1] = arr[i][j];
+		}
+	}
+
+	// вывод повернутой матрицы
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			cout << transp[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.8.8
+
+		#include <iostream>
+		using namespace std;
+
+		int main() {
+			const int N = 20;
+			int arr[N][N];
 
 	bool flag = false;
 	int n, m, k, cnt=0;
