@@ -1,56 +1,34 @@
-﻿// 1.6.10
+﻿// 1.7.10
 
 #include <iostream>
-#include <cmath>
+#include <vector>
 using namespace std;
 
 int main()
 {
-	double a, b, c, x1, x2, d;
-	cin >> a >> b >> c;
+	int n, spam;
+	cin >> n;
+	vector <int> arr(n);
 
-	if (a == 0)
+	// считывание
+	for (int i = 0; i < n; i++)
 	{
-		if (b == 0)
-		{
-			if (c == 0)
-			{
-				cout << 3;
-			}
-			else
-			{
-				cout << 0;
-			}
-		}
-		else
-		{
-			cout << 1 << " " << (-c / b);
-		}
+		cin >> arr[i];
 	}
-	else
-	{
-		d = b * b - 4 * a * c;
 
-		if (d < -0.00001)
-		{
-			cout << 0;
-		}
-		else
-		{
-			if ((d < 0.00001) and (d > -0.00001)) cout << 1 << " " << (-b / 2 / a);
-			else
-			{
-				if (d > 0.00001)
-				{
-					x1 = (-b - sqrt(d)) / (2 * a);
-					x2 = (-b + sqrt(d)) / (2 * a);
-					cout << 2 << " " << min(x1, x2) << " " << max(x1, x2);
-				}
-			}
-		}
-		
+	// циклический сдвиг вправо
+	spam = arr[n - 1];
+	for (int i = n - 1; i > 0; i--)
+	{
+		arr[i] = arr[i - 1];
 	}
-	
+	arr[0] = spam;
+
+	// вывод
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
 	return 0;
 }
 
@@ -1328,6 +1306,42 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.10
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int n, spam;
+	cin >> n;
+	vector <int> arr(n);
+
+	// считывание
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	// циклический сдвиг вправо
+	spam = arr[n - 1];
+	for (int i = n - 1; i > 0; i--)
+	{
+		arr[i] = arr[i - 1];
+	}
+	arr[0] = spam;
+
+	// вывод
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
 	return 0;
 }
 */
