@@ -1,34 +1,43 @@
-﻿// 1.7.10
+﻿// 1.8.10
 
-#include <iostream>
-#include <vector>
+#include <stdio.h>
 using namespace std;
 
-int main()
-{
-	int n, spam;
-	cin >> n;
-	vector <int> arr(n);
+int main() {
+	const int N = 30;
+	int arr[N][N];
 
-	// считывание
+	int n, m, tmp=1;
+
+	scanf_s("%d%d", &n, &m);
+
+	// ввод матрицы змейкой по строкам
 	for (int i = 0; i < n; i++)
 	{
-		cin >> arr[i];
+		for (int j = 0; j < m; j++)
+		{
+			if (i % 2)
+			{
+				arr[i][m - j - 1] = tmp;
+			}
+			else
+			{
+				arr[i][j] = tmp;
+			}
+			tmp++;
+		}
 	}
 
-	// циклический сдвиг вправо
-	spam = arr[n - 1];
-	for (int i = n - 1; i > 0; i--)
-	{
-		arr[i] = arr[i - 1];
-	}
-	arr[0] = spam;
-
-	// вывод
+	// вывод матрицы
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << " ";
+		for (int j = 0; j < m; j++)
+		{
+			printf("%4d", arr[i][j]);
+		}
+		printf("\n");
 	}
+
 	return 0;
 }
 
@@ -924,6 +933,51 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.10
+
+#include <stdio.h>
+using namespace std;
+
+int main() {
+	const int N = 30;
+	int arr[N][N];
+
+	int n, m, tmp=1;
+
+	scanf_s("%d%d", &n, &m);
+
+	// ввод матрицы змейкой по строкам
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			if (i % 2)
+			{
+				arr[i][m - j - 1] = tmp;
+			}
+			else
+			{
+				arr[i][j] = tmp;
+			}
+			tmp++;
+		}
+	}
+
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			printf("%4d", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+	return 0;
 }
 */
 
