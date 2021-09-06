@@ -1,30 +1,30 @@
-﻿//1.9.10
+﻿// 1.5.11
 
 #include <iostream>
 using namespace std;
 
-float elevate(double a, int n);
-
 int main()
 {
-	int n;
-	double a;
-	cin >> a >> n;
-	cout << elevate(a, n);
-	return 0;
-}
+	int n, x1 = 0, x2 = 1, tmp, cnt = 1;
+	cin >> n;
+	while (n > x2)
+	{
+		tmp = x1 + x2;
+		x1 = x2;
+		x2 = tmp;
+		cnt++;
+	}
 
-float elevate(double a, int n)
-{
-	if (n == 0)
+	if (n == x2)
 	{
-		return 1;
+		cout << cnt;
 	}
-	if (n % 2 == 0)
+	else
 	{
-		return elevate(a * a, n / 2);
+		cout << -1;
 	}
-	return a * elevate(a, n - 1);
+	
+	return 0;
 }
 
 
@@ -1963,6 +1963,37 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.11
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, x1 = 0, x2 = 1, tmp, cnt = 1;
+	cin >> n;
+	while (n > x2)
+	{
+		tmp = x1 + x2;
+		x1 = x2;
+		x2 = tmp;
+		cnt++;
+	}
+
+	if (n == x2)
+	{
+		cout << cnt;
+	}
+	else
+	{
+		cout << -1;
+	}
+
 	return 0;
 }
 */
