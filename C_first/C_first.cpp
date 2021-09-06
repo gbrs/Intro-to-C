@@ -1,15 +1,45 @@
-﻿// 1.6.11
+﻿// 1.7.11
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-	double a, b, c, d, e, f;
-	cin >> a >> b >> c >> d >> e >> f;
+	int n, cnt = 1, local = 0, total = 0, old = -12343;
+	cin >> n;
+	vector <int> arr(n);
 
-	// метод Крамера через определители матриц
-	cout << (d*e - b*f) / (a*d - b*c) << " " << (a * f - e * c) / (a * d - b * c);
+	// считывание
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	sort(arr.begin(), arr.end());
+	
+	for (auto now : arr)
+	{
+		// cnt - количество подряд идущих на данный момент
+		// local - количество пар среди этих подряд идущих
+		if (now == old)
+		{
+			local += cnt;
+			cnt++;
+		}
+		else
+		{
+			// total - общее количество пар
+			total += local;
+			local = 0;
+			cnt = 1;
+		}
+		old = now;
+	}
+	total += local;
+
+	cout << total;
 
 	return 0;
 }
@@ -1364,6 +1394,54 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.11
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	int n, cnt = 1, local = 0, total = 0, old = -12343;
+	cin >> n;
+	vector <int> arr(n);
+
+	// считывание
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	sort(arr.begin(), arr.end());
+
+	for (auto now : arr)
+	{
+		// cnt - количество подряд идущих на данный момент
+		// local - количество пар среди этих подряд идущих
+		if (now == old)
+		{
+			local += cnt;
+			cnt++;
+		}
+		else
+		{
+			// total - общее количество пар
+			total += local;
+			local = 0;
+			cnt = 1;
+		}
+		old = now;
+	}
+	total += local;
+
+	cout << total;
+
 	return 0;
 }
 */
