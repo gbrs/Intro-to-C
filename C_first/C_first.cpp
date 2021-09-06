@@ -1,44 +1,30 @@
-﻿// 1.8.10
+﻿//1.9.10
 
-#include <stdio.h>
+#include <iostream>
 using namespace std;
 
-int main() {
-	const int N = 30;
-	int arr[N][N];
+float elevate(double a, int n);
 
-	int n, m, tmp=1;
-
-	scanf_s("%d%d", &n, &m);
-
-	// ввод матрицы змейкой по строкам
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			if (i % 2)
-			{
-				arr[i][m - j - 1] = tmp;
-			}
-			else
-			{
-				arr[i][j] = tmp;
-			}
-			tmp++;
-		}
-	}
-
-	// вывод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			printf("%4d", arr[i][j]);
-		}
-		printf("\n");
-	}
-
+int main()
+{
+	int n;
+	double a;
+	cin >> a >> n;
+	cout << elevate(a, n);
 	return 0;
+}
+
+float elevate(double a, int n)
+{
+	if (n == 0)
+	{
+		return 1;
+	}
+	if (n % 2 == 0)
+	{
+		return elevate(a * a, n / 2);
+	}
+	return a * elevate(a, n - 1);
 }
 
 
@@ -699,6 +685,37 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.10
+
+#include <iostream>
+using namespace std;
+
+float elevate(double a, int n);
+
+int main()
+{
+	int n;
+	double a;
+	cin >> a >> n;
+	cout << elevate(a, n);
+	return 0;
+}
+
+float elevate(double a, int n)
+{
+	if (n == 0)
+	{
+		return 1;
+	}
+	if (n % 2 == 0)
+	{
+		return elevate(a * a, n / 2);
+	}
+	return a * elevate(a, n - 1);
 }
 */
 
