@@ -1,29 +1,16 @@
-﻿// 1.5.11
+﻿// 1.6.11
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-	int n, x1 = 0, x2 = 1, tmp, cnt = 1;
-	cin >> n;
-	while (n > x2)
-	{
-		tmp = x1 + x2;
-		x1 = x2;
-		x2 = tmp;
-		cnt++;
-	}
+	double a, b, c, d, e, f;
+	cin >> a >> b >> c >> d >> e >> f;
 
-	if (n == x2)
-	{
-		cout << cnt;
-	}
-	else
-	{
-		cout << -1;
-	}
-	
+	// метод Крамера через определители матриц
+	cout << (d*e - b*f) / (a*d - b*c) << " " << (a * f - e * c) / (a * d - b * c);
+
 	return 0;
 }
 
@@ -1701,6 +1688,24 @@ int main()
 	for (i = 0; i < n; i += 2) {
 		cout << a[i] << " ";
 	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.6.11
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	double a, b, c, d, e, f;
+	cin >> a >> b >> c >> d >> e >> f;
+
+	// метод Крамера через определители матриц
+	cout << (d*e - b*f) / (a*d - b*c) << " " << (a * f - e * c) / (a * d - b * c);
 
 	return 0;
 }
