@@ -1,26 +1,25 @@
-﻿//1.9.11
+﻿//1.4.12
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
-
-int adder();
 
 int main()
 {
-	cout << adder();
+	int n, m, x, y;
+	cin >> n >> m >> x >> y;
+	
+	// n должна стать короткой стороной бассейна
+	if (n > m)
+	{
+		swap(n, m);
+	}
+
+	cout << min(min(x, y), min(n - x, m - y));
+	
 	return 0;
 }
 
-int adder()
-{
-	int now;
-	cin >> now;
-	if (now == 0)
-	{
-		return 0;
-	}
-	return now + adder();
-}
 
 
 
@@ -294,6 +293,30 @@ int main()
 	cout << dict[request] << " ";
 
 return 0;
+}
+*/
+
+/*
+//1.4.12
+
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	int n, m, x, y;
+	cin >> n >> m >> x >> y;
+
+	// n должна стать короткой стороной бассейна
+	if (n > m)
+	{
+		swap(n, m);
+	}
+
+	cout << min(min(x, y), min(n - x, m - y));
+
+	return 0;
 }
 */
 
