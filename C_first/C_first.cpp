@@ -1,45 +1,40 @@
-﻿// 1.7.11
+﻿// 1.8.11
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-int main()
-{
-	int n, cnt = 1, local = 0, total = 0, old = -12343;
-	cin >> n;
-	vector <int> arr(n);
+int main() {
+	int n, m, tmp = 1;
+	cin >> n >> m;
+	vector < vector <int> > arr(n, vector <int> (m));
+	
+	// ввод матрицы по диагоналям
+	for (size_t  k = 0; k < n + m; k++)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			for (size_t j = 0; j < m; j++)
+			{
+				if ((i + j) == k)
+				{
+					arr[i][j] = tmp++;
+				}
+			}
+		}
+	}
 
-	// считывание
+	// вывод матрицы
 	for (int i = 0; i < n; i++)
 	{
-		cin >> arr[i];
-	}
-
-	sort(arr.begin(), arr.end());
-	
-	for (auto now : arr)
-	{
-		// cnt - количество подряд идущих на данный момент
-		// local - количество пар среди этих подряд идущих
-		if (now == old)
+		for (int j = 0; j < m; j++)
 		{
-			local += cnt;
-			cnt++;
+			//cout.width(4);
+			cout << setw(4) << arr[i][j];
 		}
-		else
-		{
-			// total - общее количество пар
-			total += local;
-			local = 0;
-			cnt = 1;
-		}
-		old = now;
+		cout << "\n";
 	}
-	total += local;
-
-	cout << total;
 
 	return 0;
 }
@@ -967,6 +962,48 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.11
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int n, m, tmp = 1;
+	cin >> n >> m;
+	vector < vector <int> > arr(n, vector <int> (m));
+
+	// ввод матрицы змейкой по диагонали
+	for (size_t  k = 0; k < n + m; k++)
+	{
+		for (size_t i = 0; i < n; i++)
+		{
+			for (size_t j = 0; j < m; j++)
+			{
+				if ((i + j) == k)
+				{
+					arr[i][j] = tmp++;
+				}
+			}
+		}
+	}
+
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cout.width(4);
+			cout << arr[i][j];
+		}
+		cout << "\n";
+	}
+
+	return 0;
 }
 */
 
