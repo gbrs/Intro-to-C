@@ -1,25 +1,39 @@
-﻿//1.4.12
+﻿// 1.5.12
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
 int main()
 {
-	int n, m, x, y;
-	cin >> n >> m >> x >> y;
-	
-	// n должна стать короткой стороной бассейна
-	if (n > m)
+	int x, mx = 1, current_mx = 1, cnt = 0, old;
+	cin >> x;
+	old = x;
+	while (x != 0 && cin >> x)
 	{
-		swap(n, m);
+		if (x == old)
+		{
+			current_mx += 1;
+		}
+		else
+		{
+			if (current_mx > mx)
+			{
+				mx = current_mx;
+			}
+			current_mx = 1;
+		}
+		old = x;
+	}
+		
+	if (current_mx > mx)
+	{
+		mx = current_mx;
 	}
 
-	cout << min(min(x, y), min(n - x, m - y));
-	
+
+	cout << mx;
 	return 0;
 }
-
 
 
 
@@ -2116,6 +2130,45 @@ int main()
 	double x;
 	cin >> x;
 	cout << x - (float) (int) x;
+	return 0;
+}
+*/
+
+/*
+// 1.5.12
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int x, mx = 1, current_mx = 1, cnt = 0, old;
+	cin >> x;
+	old = x;
+	while (x != 0 && cin >> x)
+	{
+		if (x == old)
+		{
+			current_mx += 1;
+		}
+		else
+		{
+			if (current_mx > mx)
+			{
+				mx = current_mx;
+			}
+			current_mx = 1;
+		}
+		old = x;
+	}
+
+	if (current_mx > mx)
+	{
+		mx = current_mx;
+	}
+
+
+	cout << mx;
 	return 0;
 }
 */
