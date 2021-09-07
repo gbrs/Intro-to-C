@@ -1,43 +1,27 @@
-﻿// 1.8.11
+﻿//1.9.11
 
 #include <iostream>
-#include <iomanip>
-#include <vector>
 using namespace std;
 
-int main() {
-	int n, m, tmp = 1;
-	cin >> n >> m;
-	vector < vector <int> > arr(n, vector <int> (m));
-	
-	// ввод матрицы по диагоналям
-	for (size_t  k = 0; k < n + m; k++)
-	{
-		for (size_t i = 0; i < n; i++)
-		{
-			for (size_t j = 0; j < m; j++)
-			{
-				if ((i + j) == k)
-				{
-					arr[i][j] = tmp++;
-				}
-			}
-		}
-	}
+int adder();
 
-	// вывод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			//cout.width(4);
-			cout << setw(4) << arr[i][j];
-		}
-		cout << "\n";
-	}
-
+int main()
+{
+	cout << adder();
 	return 0;
 }
+
+int adder()
+{
+	int now;
+	cin >> now;
+	if (now == 0)
+	{
+		return 0;
+	}
+	return now + adder();
+}
+
 
 
 
@@ -697,6 +681,32 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.11
+
+#include <iostream>
+using namespace std;
+
+int adder();
+
+int main()
+{
+	cout << adder();
+	return 0;
+}
+
+int adder()
+{
+	int now;
+	cin >> now;
+	if (now == 0)
+	{
+		return 0;
+	}
+	return now + adder();
 }
 */
 
