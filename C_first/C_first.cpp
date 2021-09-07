@@ -1,37 +1,43 @@
-﻿// 1.5.12
+﻿// 1.7.12
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main()
 {
-	int x, mx = 1, current_mx = 1, cnt = 0, old;
-	cin >> x;
-	old = x;
-	while (x != 0 && cin >> x)
+	int i, n, cnt;
+	cin >> n;
+	vector <int> arr(n);
+	vector <int> arr_output;
+
+	// считывание
+	for (int i = 0; i < n; i++)
 	{
-		if (x == old)
+		cin >> arr[i];
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		cnt = 0;
+		for (int j = 0; j < n; j++)
 		{
-			current_mx += 1;
-		}
-		else
-		{
-			if (current_mx > mx)
+			if (arr[i] == arr[j])
 			{
-				mx = current_mx;
+				cnt += 1;
 			}
-			current_mx = 1;
 		}
-		old = x;
+		if (cnt == 1)
+		{
+			arr_output.push_back(arr[i]);
+		}
 	}
-		
-	if (current_mx > mx)
+
+	for (auto now : arr_output)
 	{
-		mx = current_mx;
+		cout << now << " ";
 	}
 
-
-	cout << mx;
 	return 0;
 }
 
@@ -1478,6 +1484,51 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.12
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int i, n, cnt;
+	cin >> n;
+	vector <int> arr(n);
+	vector <int> arr_output;
+
+	// считывание
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+	}
+
+	for (i = 0; i < n; i++)
+	{
+		cnt = 0;
+		for (int j = 0; j < n; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				cnt += 1;
+			}
+		}
+		if (cnt == 1)
+		{
+			arr_output.push_back(arr[i]);
+		}
+	}
+
+	for (auto now : arr_output)
+	{
+		cout << now << " ";
+	}
+
 	return 0;
 }
 */
