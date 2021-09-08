@@ -1,41 +1,37 @@
-﻿// 1.7.12
+﻿// 1.8.12
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
-int main()
-{
-	int i, n, cnt;
-	cin >> n;
-	vector <int> arr(n);
-	vector <int> arr_output;
+int main() {
+	int n, m, cnt = 1;
+	cin >> n >> m;
+	vector < vector <int> > arr(n, vector <int>(m));
 
-	// считывание
-	for (int i = 0; i < n; i++)
+	
+	// ввод матрицы
+	for (size_t i = 0; i < n; i++)
 	{
-		cin >> arr[i];
-	}
-
-	for (i = 0; i < n; i++)
-	{
-		cnt = 0;
-		for (int j = 0; j < n; j++)
+		for (size_t j = 0; j < m; j++)
 		{
-			if (arr[i] == arr[j])
+			if ((i + j) % 2 == 0)
 			{
-				cnt += 1;
+				arr[i][j] = cnt++;
 			}
 		}
-		if (cnt == 1)
-		{
-			arr_output.push_back(arr[i]);
-		}
 	}
+	
 
-	for (auto now : arr_output)
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
 	{
-		cout << now << " ";
+		for (int j = 0; j < m; j++)
+		{
+			cout.width(4);
+			cout << arr[i][j];
+		}
+		cout << "\n";
 	}
 
 	return 0;
@@ -1015,6 +1011,47 @@ int min(int a, int b)
 int min4(int a, int b, int c, int d)
 {
 	return min(min(a, b), min(c, d));
+}
+*/
+
+/*
+// 1.8.12
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int n, m, cnt = 1;
+	cin >> n >> m;
+	vector < vector <int> > arr(n, vector <int>(m));
+
+
+	// ввод матрицы
+	for (size_t i = 0; i < n; i++)
+	{
+		for (size_t j = 0; j < m; j++)
+		{
+			if ((i + j) % 2 == 0)
+			{
+				arr[i][j] = cnt++;
+			}
+		}
+	}
+
+
+	// вывод матрицы
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cout.width(4);
+			cout << arr[i][j];
+		}
+		cout << "\n";
+	}
+
+	return 0;
 }
 */
 
