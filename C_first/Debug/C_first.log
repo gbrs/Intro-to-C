@@ -1,4 +1,5 @@
 ﻿  C_first.cpp
+C:\Users\Боря\PycharmProjects\Intro_to_C\C_first\C_first.cpp(8,6): warning C4101: now: неиспользованная локальная переменная
 LINK : warning LNK4075: не учитывается "/INCREMENTAL" из-за спецификации "/PROFILE"
 C_first.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/OPT:REF"
   C_first.vcxproj -> C:\Users\Боря\PycharmProjects\Intro_to_C\Debug\C_first.exe
