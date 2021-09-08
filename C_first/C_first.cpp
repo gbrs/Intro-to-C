@@ -1,37 +1,42 @@
-﻿// 1.8.12
+﻿// 1.4.14
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int main() {
-	int n, m, cnt = 1;
-	cin >> n >> m;
-	vector < vector <int> > arr(n, vector <int>(m));
-
+	int a1, b1, c1, a2, b2, c2;
+	cin >> a1 >> b1 >> c1;
+	cin >> a2 >> b2 >> c2;
 	
-	// ввод матрицы
-	for (size_t i = 0; i < n; i++)
+	if (a1 > b1) swap(a1, b1);
+	if (b1 > c1) swap(b1, c1);
+	if (a1 > b1) swap(a1, b1);
+
+	if (a2 > b2) swap(a2, b2);
+	if (b2 > c2) swap(b2, c2);
+	if (a2 > b2) swap(a2, b2);
+
+	if (a1 == a2 && b1 == b2 && c1 == c2)
 	{
-		for (size_t j = 0; j < m; j++)
+		cout << "Boxes are equal";
+	}
+	else
+	{
+		if (a1 >= a2 && b1 >= b2 && c1 >= c2)
 		{
-			if ((i + j) % 2 == 0)
+			cout << "The first box is larger than the second one";
+		}
+		else
+		{
+			if (a1 <= a2 && b1 <= b2 && c1 <= c2)
 			{
-				arr[i][j] = cnt++;
+				cout << "The first box is smaller than the second one";
+			}
+			else
+			{
+				cout << "Boxes are incomparable";
 			}
 		}
-	}
-	
-
-	// вывод матрицы
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			cout.width(4);
-			cout << arr[i][j];
-		}
-		cout << "\n";
 	}
 
 	return 0;
@@ -309,6 +314,72 @@ int main()
 	cout << dict[request] << " ";
 
 return 0;
+}
+*/
+
+/*
+// 1.4.14
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a1, b1, c1, a2, b2, c2;
+	cin >> a1 >> b1 >> c1;
+	cin >> a2 >> b2 >> c2;
+
+	if (a1 > b1) swap(a1, b1);
+	if (b1 > c1) swap(b1, c1);
+	if (a1 > b1) swap(a1, b1);
+
+	if (a2 > b2) swap(a2, b2);
+	if (b2 > c2) swap(b2, c2);
+	if (a2 > b2) swap(a2, b2);
+
+	if (a1 == a2 && b1 == b2 && c1 == c2)
+	{
+		cout << "Boxes are equal";
+	}
+	else
+	{
+		if (a1 >= a2 && b1 >= b2 && c1 >= c2)
+		{
+			cout << "The first box is larger than the second one";
+		}
+		else
+		{
+			if (a1 <= a2 && b1 <= b2 && c1 <= c2)
+			{
+				cout << "The first box is smaller than the second one";
+			}
+			else
+			{
+				cout << "Boxes are incomparable";
+			}
+		}
+	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.4.13
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b, c;
+	cin >> a >> b >> c;
+
+	if (a > b) swap(a, b);
+	if (b > c) swap(b, c);
+	if (a > b) swap(a, b);
+
+	cout << a << " " << b << " " << c;
+
+	return 0;
 }
 */
 
