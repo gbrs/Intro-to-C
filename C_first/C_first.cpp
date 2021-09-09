@@ -1,44 +1,42 @@
-﻿// 1.5.14
+﻿// 1.7.12
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-	int left, center, right, cnt = 0, mn = 10000;
-	bool flag = false;
+	bool pass;
 	
-	// ввод 2 первых элементов с проверкой не ноль ли
-	if ((cin >> left && left) && (cin >> center && center))
+	vector <int> arrh(8);
+	vector <int> arrv(8);
+
+
+	// считывание
+	for (int i = 0; i < 8; i++)
 	{
-		cin >> right;
-		while (right != 0)
+		cin >> arrh[i] >> arrv[i];
+	}
+
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = i + 1; j < 8; j++)
 		{
-			if (center > left && center > right)
+			if ((arrh[i] == arrh[j])
+				|| (arrv[i] == arrv[j])
+				|| (arrh[i] + arrv[i] == arrh[j] + arrv[j])
+				|| (arrh[i] - arrv[i] == arrh[j] - arrv[j])
+				)
 			{
-				if (cnt + 1 < mn && flag)
-				{
-					mn = cnt + 1;
-				}
-				flag = true;  // флаг указывает на то, что один максимум уже был
-				cnt = 0;
+				cout << "YES";
+				return 0;
 			}
-			else
-			{
-				if (flag)
-				{
-					cnt++;
-				}	
-			}
-			left = center;
-			center = right;
-			cin >> right;
 		}
 	}
 
-	if (mn == 10000) mn = 0;
-	cout << mn;
-	
+	cout << "NO";
+
 	return 0;
 }
 
