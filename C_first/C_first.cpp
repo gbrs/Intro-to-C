@@ -1,33 +1,25 @@
-﻿// 1.7.14
+﻿//1.9.12
 
 #include <iostream>
-#include <vector>
 using namespace std;
+
+int fib(int);
 
 int main()
 {
-	bool pass;
-	int kegel_number=20, ball_number, start_kegel, stop_kegel;
-	cin >> kegel_number >> ball_number;
-	vector <char> arr(kegel_number, 'I');
-
-	// расставляем точки на месте выбиваемых кеглей
-	for (size_t i = 0; i < ball_number; i++)
-	{
-		cin >> start_kegel >> stop_kegel;
-		for (size_t j = start_kegel - 1; j <= stop_kegel - 1; j++)
-		{
-			arr[j] = '.';
-		}
-	}
-
-	// вывод массива
-	for (auto now : arr)
-	{
-		cout << now;
-	}
-
+	int n;
+	cin >> n;
+	cout << fib(n);
 	return 0;
+}
+
+int fib(int n)
+{
+	if (n == 1 || n == 2)
+	{
+		return 1;
+	}
+	return fib(n - 2) + fib(n - 1);
 }
 
 
@@ -779,6 +771,32 @@ int main() {
 	cin >> c;
 	cout << (c >= 48 && c <= 57 ? "yes" : "no") << endl;
 	return 0;
+}
+*/
+
+/*
+//1.9.12
+
+#include <iostream>
+using namespace std;
+
+int fib(int);
+
+int main()
+{
+	int n;
+	cin >> n;
+	cout << fib(n);
+	return 0;
+}
+
+int fib(int n)
+{
+	if (n == 1 || n == 2)
+	{
+		return 1;
+	}
+	return fib(n - 2) + fib(n - 1);
 }
 */
 
