@@ -1,41 +1,31 @@
-﻿// 1.7.12
+﻿// 1.7.14
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 int main()
 {
 	bool pass;
-	
-	vector <int> arrh(8);
-	vector <int> arrv(8);
+	int kegel_number=20, ball_number, start_kegel, stop_kegel;
+	cin >> kegel_number >> ball_number;
+	vector <char> arr(kegel_number, 'I');
 
-
-	// считывание
-	for (int i = 0; i < 8; i++)
+	// расставляем точки на месте выбиваемых кеглей
+	for (size_t i = 0; i < ball_number; i++)
 	{
-		cin >> arrh[i] >> arrv[i];
-	}
-
-	for (int i = 0; i < 7; i++)
-	{
-		for (int j = i + 1; j < 8; j++)
+		cin >> start_kegel >> stop_kegel;
+		for (size_t j = start_kegel - 1; j <= stop_kegel - 1; j++)
 		{
-			if ((arrh[i] == arrh[j])
-				|| (arrv[i] == arrv[j])
-				|| (arrh[i] + arrv[i] == arrh[j] + arrv[j])
-				|| (arrh[i] - arrv[i] == arrh[j] - arrv[j])
-				)
-			{
-				cout << "YES";
-				return 0;
-			}
+			arr[j] = '.';
 		}
 	}
 
-	cout << "NO";
+	// вывод массива
+	for (auto now : arr)
+	{
+		cout << now;
+	}
 
 	return 0;
 }
@@ -1590,6 +1580,85 @@ int main() {
 		}
 	}
 	cout << max_row << " " << max_column;
+	return 0;
+}
+*/
+
+/*
+// 1.7.14
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	bool pass;
+	int kegel_number=20, ball_number, start_kegel, stop_kegel;
+	cin >> kegel_number >> ball_number;
+	vector <char> arr(kegel_number, 'I');
+
+	// расставляем точки на месте выбиваемых кеглей
+	for (size_t i = 0; i < ball_number; i++)
+	{
+		cin >> start_kegel >> stop_kegel;
+		for (size_t j = start_kegel - 1; j <= stop_kegel - 1; j++)
+		{
+			arr[j] = '.';
+		}
+	}
+
+	// вывод массива
+	for (auto now : arr)
+	{
+		cout << now;
+	}
+
+	return 0;
+}
+*/
+
+/*
+// 1.7.13
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	bool pass;
+
+	vector <int> arrh(8);
+	vector <int> arrv(8);
+
+
+	// считывание
+	for (int i = 0; i < 8; i++)
+	{
+		cin >> arrh[i] >> arrv[i];
+	}
+
+	// попарная проверка бьют ли ферзи друг друга
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = i + 1; j < 8; j++)
+		{
+			if ((arrh[i] == arrh[j])
+				|| (arrv[i] == arrv[j])
+				|| (arrh[i] + arrv[i] == arrh[j] + arrv[j])
+				|| (arrh[i] - arrv[i] == arrh[j] - arrv[j])
+				)
+			{
+				cout << "YES";
+				return 0;
+			}
+		}
+	}
+
+	cout << "NO";
+
 	return 0;
 }
 */
